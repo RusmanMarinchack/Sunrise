@@ -57,3 +57,54 @@ function menuCatalog() {
 }
 menuCatalog();
 
+function subMenuMobile() {
+
+
+    // if(catalogBtn.classList.contains('catalog-btn')){
+        
+        // let catalogBtnClass = document.querySelector('catalog-btn');
+        
+
+    // }
+    
+    // catalogBtn
+}
+subMenuMobile();
+
+let navMenu = document.querySelector('.nav__manu-wrapper');
+let navMenuClone = navMenu.cloneNode(true)
+// console.log(navMenuClone.innerHTML)
+document.addEventListener('click', function(e) {
+    if(e.target.classList.value === 'nav__link nav__link-catalog _icon-right'){
+        console.log(1)
+        let catalog = document.querySelector('.nav__link-catalog');
+        let catalogBtn = document.querySelector('.block-catalog__text');
+        let navMenu = document.querySelector('.nav__manu');
+        let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
+    
+        // catalog.addEventListener('click', function() {
+            let blickCatalog = document.querySelector('.block-catalog');
+            
+                
+            catalogBtn.classList.add('catalog-btn');
+            navMenuWrapper.innerHTML = blickCatalog.innerHTML;
+            
+            // if(catalogBtn.classList.contains('catalog-btn')){
+            //     catalogBtn.addEventListener('click', function() {
+            //         console.log(1);
+            //         // this.classList.remove('catalog-btn');
+            //         // navMenuWrapper.innerHTML = navMenu.innerHTML;
+            //     })
+            // }
+        // })
+    }
+
+    console.log(e.target.classList.value === 'block-catalog__text catalog-btn')
+    if(e.target.classList.value === 'block-catalog__text catalog-btn'){
+        
+        let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
+
+        navMenuWrapper.innerHTML = navMenuClone.innerHTML;
+        console.log(navMenu)
+    }
+})

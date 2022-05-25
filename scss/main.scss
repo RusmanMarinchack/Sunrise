@@ -1,4 +1,5 @@
 @import "normalize";
+@import "mixin";
 @import "font";
 
 $colorSilver: rgba(118, 118, 118, 1);
@@ -18,6 +19,11 @@ select{
   background: transparent;
 }
 
+.title{
+  font-size: calc(28px + 8 * (100vw / 1992));
+  font-weight: 700;
+}
+
 ._container {
   max-width: 1400px;
   margin: 0 auto;
@@ -25,12 +31,6 @@ select{
   @media screen and (max-width: 1400px) {
     max-width: 1200px;
   }
-  // @media screen and (max-width: 1200px) {
-  //   max-width: 992px;
-  // }
-  // @media screen and (max-width: 992px) {
-  //   max-width: 768px;
-  // }
 }
 
 // Header ============================
@@ -62,6 +62,10 @@ select{
           @media screen and (max-width: 768px) {
             width: 90%;
             padding-right: calc(10% - 15px);
+          }
+          @media screen and (max-width: 576px) {
+            width: 80%;
+            padding-right: calc(20% - 15px);
           }
         }
   
@@ -511,6 +515,9 @@ select{
 
     &__container {
       display: flex;
+      @media screen and (max-width: 992px) {
+        padding: 0;
+      }
     }
 
     // .header-content__block-catalog
@@ -790,7 +797,6 @@ select{
         overflow: hidden;
         @media screen and (max-width: 992px) {
           margin: 0;
-          height: 100%;
         }
       }
 
@@ -816,7 +822,7 @@ select{
         z-index: 1;
         @media screen and (max-width: 992px) {
           left: 20px;
-          bottom: 40px;
+          bottom: 20px;
         }
         & .swiper-pagination-bullet {
           background-color: $colorOreng;
@@ -853,6 +859,10 @@ select{
           font-size: 18px;
           position: relative;
           color: $colorSilver;
+          @media screen and (max-width: 992px) {
+            display: block;
+            margin-bottom: 40px;
+          }
         }
       }
 
@@ -874,6 +884,9 @@ select{
         position: absolute;
         bottom: 0;
         right: 0;
+        @media screen and (max-width: 576px) {
+          width: 50%;
+        }
       }
 
       // .block-body__text
@@ -886,7 +899,7 @@ select{
         max-width: 500px;
         margin-bottom: 140px;
         @media screen and (max-width: 992px) {
-          margin-bottom: 123px;
+          margin-bottom: 80px;
         }
         @media screen and (max-width: 768px) {
           line-height: 34.4px;
@@ -902,3 +915,104 @@ select{
 }
 
 // ===================================
+// Catalog ===========================
+
+.main {
+
+  // .main__catalog
+
+  .catalog {
+
+    // .catalog__conatiner
+  
+    &__conatiner {
+    }
+  
+    // .catalog__title
+  
+    &__title {
+    }
+  
+    // .catalog__wrappwe
+  
+    &__wrappwe {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      column-gap: calc(20px + 55 * (100vw / 1992));
+      row-gap: calc(30px + 50 * (100vw / 1992));
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+      }
+    }
+  
+    // .catalog__item
+  
+    .catalog-item {
+  
+      // .catalog-item__link
+    
+      &__link {
+        display: block;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        &.color-block-1{
+          background: rgba(235, 96, 96, 1);
+        }
+        &.color-block-2{
+          background: rgba(235, 188, 96, 1);
+        }
+        &.color-block-3{
+          background-color: rgba(96, 185, 235, 1);
+        }
+        &.color-block-4{
+          background-color: rgba(174, 96, 235, 1);
+        }
+        &.color-block-5{
+          background-color: rgba(235, 196, 96, 1);
+        }
+        &.color-block-6{
+          background-color: rgba(96, 126, 235, 1);
+        }
+        &.color-block-7{
+          background-color: rgba(96, 235, 168, 1);
+        }
+        &.color-block-8{
+          background-color: rgba(228, 63, 73, 1);
+        }
+        &.color-block-9{
+          background-color:rgba(235, 96, 146, 1);
+        }
+        &.color-block-10{
+          background-color: rgba(96, 235, 218, 1);
+        }
+        &.color-block-11{
+          background-color: rgba(232, 235, 96, 1);
+        }
+      }
+      
+
+      // .catalog-item__img
+    
+      &__img {
+        width: 100%;
+      }
+    }
+  
+    // .catalog__name
+  
+    &__name {
+      font-size: calc(18px + 8 * (100vw / 1992));
+      font-weight: 700;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// ===================================
+

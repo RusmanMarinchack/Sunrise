@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('fonts/icons.eot?sjwma9');
-  src:  url('fonts/icons.eot?sjwma9#iefix') format('embedded-opentype'),
-    url('../fonts/icons.ttf?sjwma9') format('truetype'),
-    url('../fonts/icons.woff?sjwma9') format('woff'),
-    url('../fonts/icons.svg?sjwma9#icons') format('svg');
+  src:  url('fonts/icons.eot?c1yjlf');
+  src:  url('fonts/icons.eot?c1yjlf#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?c1yjlf') format('truetype'),
+    url('../fonts/icons.woff?c1yjlf') format('woff'),
+    url('../fonts/icons.svg?c1yjlf#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,12 +28,15 @@
 ._icon-basket:before {
   content: "\e900";
 }
-._icon-like:before {
+._icon-left:before {
   content: "\e901";
 }
-._icon-right:before {
+._icon-like:before {
   content: "\e902";
 }
-._icon-search:before {
+._icon-right:before {
   content: "\e903";
+}
+._icon-search:before {
+  content: "\e904";
 }

@@ -250,45 +250,6 @@ ul {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'icons';
-  src: url("fonts/icons.eot?sjwma9");
-  src: url("fonts/icons.eot?sjwma9#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?sjwma9") format("truetype"), url("../fonts/icons.woff?sjwma9") format("woff"), url("../fonts/icons.svg?sjwma9#icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="_icon-"]::before, [class*=" _icon-"]::before {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icons' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-._icon-basket:before {
-  content: "\e900";
-}
-
-._icon-like:before {
-  content: "\e901";
-}
-
-._icon-right:before {
-  content: "\e902";
-}
-
-._icon-search:before {
-  content: "\e903";
-}
-
 html, body {
   overflow-y: auto;
   overflow-x: hidden;
@@ -297,6 +258,10 @@ html, body {
 body {
   font-family: "Avenir-Next-Cyr", sans-serif;
   min-width: 320px;
+}
+
+select {
+  background: transparent;
 }
 
 ._container {
@@ -441,6 +406,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    font-size: 18px;
   }
 }
 
@@ -568,6 +534,83 @@ body {
   .header .header-top .nav__wrapper-burger._burger-active {
     left: 0;
   }
+}
+
+.header .header-top .nav__manu-wrapper {
+  margin-bottom: 20px;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__wrapper, .header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__wrapper::-webkit-scrollbar, .header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper::-webkit-scrollbar {
+  width: 5px;
+  background-color: #e4e4e4;
+  border-radius: 4px;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__wrapper::-webkit-scrollbar-thumb, .header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper::-webkit-scrollbar-thumb {
+  background-color: #eb7047;
+  border-radius: 4px;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__menu {
+  padding: 20px 0;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__menu .block-catalog__item {
+  list-style: none;
+  position: relative;
+  margin: 0 20px;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__menu .block-catalog__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__menu .block-catalog__item::before {
+  position: absolute;
+  right: 0;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__text {
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.header .header-top .nav__manu-wrapper .block-catalog__text span::before {
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper {
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  list-style: none;
+  margin: 0 20px;
+  padding: 20px 0;
+}
+
+.header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper .catalog-sub-menu__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper .catalog-sub-menu__link {
+  text-decoration: none;
+  color: #000;
+}
+
+.header .header-top .nav__manu-wrapper .catalog-sub-menu__title {
+  margin: 20px;
+}
+
+.header .header-top .nav__manu-wrapper .catalog-sub-menu__title span::before {
+  padding-right: 10px;
+  font-size: 16px;
 }
 
 .header .header-top .nav__manu {
@@ -835,6 +878,18 @@ body {
   text-transform: uppercase;
   border-radius: 4px 4px 0px 0px;
   color: #fff;
+}
+
+.header .header-content .block-catalog__text._icon-right::before {
+  display: block;
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+
+@media screen and (max-width: 992px) {
+  .header .header-content .block-catalog__text._icon-right::before {
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,6 +1,5 @@
 @import "normalize";
 @import "font";
-@import "icon-font";
 
 $colorSilver: rgba(118, 118, 118, 1);
 $colorOreng: #eb7047;
@@ -13,6 +12,10 @@ html, body {
 body {
   font-family: "Avenir-Next-Cyr", sans-serif;
   min-width: 320px;
+}
+
+select{
+  background: transparent;
 }
 
 ._container {
@@ -141,6 +144,7 @@ body {
       display: none;
       @media screen and (max-width: 992px) {
         display: flex;
+        font-size: 18px;
       }
     }
 
@@ -222,6 +226,7 @@ body {
             display: flex;
           }
         }
+
       }
 
       &__wrapper-burger{
@@ -240,6 +245,73 @@ body {
           background: #fff;
           &._burger-active {
             left: 0;
+          }
+        }
+      }
+
+      &__manu-wrapper{
+        margin-bottom: 20px;
+        & .block-catalog__wrapper, .catalog-sub-menu__wrapper{
+          overflow: auto;
+          max-height: 500px;
+          &::-webkit-scrollbar {
+            width: 5px;
+            background-color: rgba(228, 228, 228, 1);
+            border-radius: 4px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: $colorOreng;
+            border-radius: 4px;
+          }
+        }
+        & .block-catalog__menu{
+          padding: 20px 0;
+          border-top: 1px solid rgba(228, 228, 228, 1);
+          border-bottom: 1px solid rgba(228, 228, 228, 1);
+        }
+        & .block-catalog__menu .block-catalog__item{
+          list-style: none;
+          position: relative;
+          margin: 0 20px;
+          &:not(:last-child){
+            margin-bottom: 20px;
+          }
+          &::before{
+            position: absolute;
+            right: 0;
+          }
+        }
+        & .block-catalog__text{
+          padding: 20px;
+          text-transform: uppercase;
+          & span::before{
+            padding-right: 10px;
+            font-size: 16px;
+          }
+        }
+
+        & .catalog-sub-menu__wrapper{
+          border-top: 1px solid rgba(228, 228, 228, 1);
+          border-bottom: 1px solid rgba(228, 228, 228, 1);
+          list-style: none;
+          margin: 0 20px;
+          padding: 20px 0;
+
+          & .catalog-sub-menu__item{
+            &:not(:last-child){
+              margin-bottom: 15px;
+            }
+          }
+          & .catalog-sub-menu__link{
+            text-decoration: none;
+            color: #000;
+          }
+        }
+        & .catalog-sub-menu__title{
+          margin: 20px;
+          & span::before{
+            padding-right: 10px;
+            font-size: 16px;
           }
         }
       }
@@ -309,9 +381,6 @@ body {
       @media screen and (max-width: 992px){
         display: none;
       }
-      // @media screen and (max-width: 576px) {
-      //   margin-left: 0;
-      // }
     }
   }
 
@@ -467,6 +536,14 @@ body {
         text-transform: uppercase;
         border-radius: 4px 4px 0px 0px;
         color: #fff;
+          &._icon-right::before{
+            display: block;
+            transform: rotate(150deg);
+            @media screen and (max-width: 992px) {
+              display: inline-block;
+            }
+          }
+
         @media screen and (max-width: 1200px) {
           padding: 14px 90px;
         }

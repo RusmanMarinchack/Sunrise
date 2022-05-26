@@ -49,17 +49,6 @@ new Swiper('.sales-leaders__slider', {
             slideToClickedSlide: true,
         }
     }
-
-    // breakpoints: {
-    //     // mobile + tablet - 320-990
-    //     320: {
-    //       slidesPerView: 1
-    //     },
-    //     // desktop >= 991
-    //     991: {
-    //       slidesPerView: 4
-    //     }
-    //   }
 });
 
 
@@ -186,3 +175,19 @@ function changes(screen) {
         })
     }
 }
+
+let btnStart = document.querySelector('.footer__btn-start');
+document.addEventListener('scroll', function() {
+    if(window.scrollY >= 200){
+        btnStart.classList.add('btn-start-active');
+    } else {
+        btnStart.classList.remove('btn-start-active');
+    }
+})
+
+btnStart.addEventListener('click', function() {
+    window.scrollBy({
+        top: -window.scrollY,
+        behavior: 'smooth'
+    })
+})

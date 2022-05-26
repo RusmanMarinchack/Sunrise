@@ -1116,7 +1116,7 @@
                   </a>
                 </div>
               </div>
-              <div class="block-body__swiper-pagination"></div>
+              <div class="block-body__swiper-pagination swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -1293,70 +1293,6 @@
                   <a href="#" class="product-block-btn__btn btn">Купити</a>
                 </div>
               </div>
-              <div class="sales-leaders__swiper-slide sales-leaders-product swiper-slide">
-                <a href="#">
-                  <img class="sales-leaders-product__img" src="./img/curtains/5.png" alt="">
-                </a>
-                <span class="_icon-like"></span>
-                <div class="sales-leaders-product__info">
-                  <span class="sales-leaders-product__sub-nume">Маркізи</span>
-                  <div class="sales-leaders-product__name">Ролети День-Ніч Secret</div>
-                  <div class="sales-leaders-product__block-price">
-                    <span class="sales-leaders-product__price">649 грн</span>
-                    <span class="sales-leaders-product__pld-price">749 грн</span>
-                  </div>
-                </div>
-                <div class="sales-leaders-product__block-btn product-block-btn">
-                  <div class="product-block-btn__wrapper-namber">
-                    <button class="product-block-btn__minus">-</button>
-                    <span class="product-block-btn__namber">1</span>
-                    <button class="product-block-btn__plus">+</button>
-                  </div>
-                  <a href="#" class="product-block-btn__btn btn">Купити</a>
-                </div>
-              </div>
-              <div class="sales-leaders__swiper-slide sales-leaders-product swiper-slide">
-                <a href="#">
-                  <img class="sales-leaders-product__img" src="./img/curtains/4.png" alt="">
-                </a>
-                <span class="_icon-like"></span>
-                <div class="sales-leaders-product__info">
-                  <span class="sales-leaders-product__sub-nume">Маркізи</span>
-                  <div class="sales-leaders-product__name">Ролети День-Ніч Secret</div>
-                  <div class="sales-leaders-product__block-price">
-                    <span class="sales-leaders-product__price">320 грн</span>
-                  </div>
-                </div>
-                <div class="sales-leaders-product__block-btn product-block-btn">
-                  <div class="product-block-btn__wrapper-namber">
-                    <button class="product-block-btn__minus">-</button>
-                    <span class="product-block-btn__namber">1</span>
-                    <button class="product-block-btn__plus">+</button>
-                  </div>
-                  <a href="#" class="product-block-btn__btn btn">Купити</a>
-                </div>
-              </div>
-              <div class="sales-leaders__swiper-slide sales-leaders-product swiper-slide">
-                <a href="#">
-                  <img class="sales-leaders-product__img" src="./img/curtains/9.png" alt="">
-                </a>
-                <span class="_icon-like"></span>
-                <div class="sales-leaders-product__info">
-                  <span class="sales-leaders-product__sub-nume">Маркізи</span>
-                  <div class="sales-leaders-product__name">Ролети День-Ніч Secret</div>
-                  <div class="sales-leaders-product__block-price">
-                    <span class="sales-leaders-product__price">320 грн</span>
-                  </div>
-                </div>
-                <div class="sales-leaders-product__block-btn product-block-btn">
-                  <div class="product-block-btn__wrapper-namber">
-                    <button class="product-block-btn__minus length">-</button>
-                    <span class="product-block-btn__namber">1</span>
-                    <button class="product-block-btn__plus length">+</button>
-                  </div>
-                  <a href="#" class="product-block-btn__btn btn">Купити</a>
-                </div>
-              </div>
             </div>
               <!-- If we need pagination -->
             <div class="sales-leaders__swiper-pagination swiper-pagination"></div>
@@ -1370,23 +1306,31 @@
       <section class="main__order order">
         <div class="order__container _container">
           <div class="order__block-text">
-            <h2 class="order__title title">Замовити виїзд монтажника <span class="oreng">на замір</span></h2>
-            <div class="order__sub-title">Залиште заявку по телефону: <a href="tel:+380983772595">+38 (098) 37-72-595</a></div>
-            <p class="order__text">Наш інженер-проектувальник приїде у зручний для Вас час, допоможе з вибором місця встановлення ролетів або штор та здійснить замір для Вашого вікна або:</p>
+              <div class="order__wrapper-text">
+                <h2 class="order__title title">Замовити виїзд монтажника <span class="oreng">на замір</span></h2>
+                <div class="order__sub-title">Залиште заявку по телефону: <a href="tel:+380983772595">+38 (098) 37-72-595</a></div>
+                <p class="order__text">Наш інженер-проектувальник приїде у зручний для Вас час, допоможе з вибором місця встановлення ролетів або штор та здійснить замір для Вашого вікна або:</p>
+            </div>
           </div>
           <div class="order__block-form order-block-form">
             <div class="order-block-form__text">Заповніть форму для <span class="oreng">замовлення</span> заміру!</div>
             <div class="order-block-form__sub-text">Та отримайте повний кошторис необхідних виробів та монтажних робіт.</div>
             <form action="#" class="order-block-form__form form">
-              <label for="input-name">Ім’я</label>
-              <input type="text" class="form__input input-name" id="input-name">
-              <label for="input-number">Номер телефону</label>
-              <input type="namber" class="form__input input-number" id="input-number">
+              <div class="form__item">
+                <label for="input-name">Ім’я</label>
+                <input type="text" class="form__input input-name" id="input-name">
+              </div>
+              <div class="form__item">
+                <label for="input-number">Номер телефону</label>
+                <input type="namber" class="form__input input-number" id="input-number">
+              </div>
+
               <button class="form__btn btn">Залишити заявку</button>
             </form>
-            <img src="./img/order/decor-order.png" alt="Decor">
-            <img src="./img/order/decor-order-arrow.png" alt="Arrow">
+
           </div>
+          <img class="order__img order-decor" src="./img/order/decor-order.png" alt="Decor">
+          <img class="order__img order-arrow" src="./img/order/decor-order-arrow.png" alt="Arrow">
         </div>
       </section>
     </main>

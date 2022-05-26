@@ -1,3 +1,0 @@
-@mixin adaptive($max, $min, $windowWidth) {
-    font-size: calc(#{$max + px} + #{$min} * (100vw / #{$windowWidth}));
-}

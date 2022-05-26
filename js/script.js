@@ -14,35 +14,52 @@ new Swiper('.block-body__swiper', {
 });
 
 new Swiper('.sales-leaders__slider', {
-    //    slidesPerView: 1,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
     },
-    // breakpoints: {
-    //     992: {
-    //         // slidesPerView: 4,
-
-    //         pagination: {
-    //             el: '.sales-leaders__swiper-pagination',
-    //             clickable: true,
-    //             renderBullet: function (index, className) {
-    //                 return `<span class="${className}"><span></span></span>`
-    //             }
-    //         }
-    //     },
-    // }
+    pagination: {
+        el: '.sales-leaders__swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return `<span class="${className}"><span></span></span>`
+        }
+    },
+    slidesPerView: 4,
 
     breakpoints: {
-        // mobile + tablet - 320-990
-        320: {
-          slidesPerView: 1
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            slideToClickedSlide: true,
         },
-        // desktop >= 991
-        991: {
-          slidesPerView: 4
+
+        500: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            slideToClickedSlide: true,
+        },
+           1199: {
+            slidesPerView: 3,
+            slideToClickedSlide: true,
+        },
+        1399: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            slideToClickedSlide: true,
         }
-      }
+    }
+
+    // breakpoints: {
+    //     // mobile + tablet - 320-990
+    //     320: {
+    //       slidesPerView: 1
+    //     },
+    //     // desktop >= 991
+    //     991: {
+    //       slidesPerView: 4
+    //     }
+    //   }
 });
 
 

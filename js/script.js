@@ -1,6 +1,9 @@
 'use strict'
 
 new Swiper('.block-body__swiper', {
+    autoplay: {
+        delay: 3000
+    },
     pagination: {
         el: '.block-body__swiper-pagination',
         clickable: true,
@@ -8,6 +11,38 @@ new Swiper('.block-body__swiper', {
             return `<span class="${className}"><span></span></span>`
         }
     }
+});
+
+new Swiper('.sales-leaders__slider', {
+    //    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    // breakpoints: {
+    //     992: {
+    //         // slidesPerView: 4,
+
+    //         pagination: {
+    //             el: '.sales-leaders__swiper-pagination',
+    //             clickable: true,
+    //             renderBullet: function (index, className) {
+    //                 return `<span class="${className}"><span></span></span>`
+    //             }
+    //         }
+    //     },
+    // }
+
+    breakpoints: {
+        // mobile + tablet - 320-990
+        320: {
+          slidesPerView: 1
+        },
+        // desktop >= 991
+        991: {
+          slidesPerView: 4
+        }
+      }
 });
 
 
@@ -58,22 +93,6 @@ function menuCatalog() {
 }
 menuCatalog();
 
-function subMenuMobile() {
-
-
-    // if(catalogBtn.classList.contains('catalog-btn')){
-
-    // let catalogBtnClass = document.querySelector('catalog-btn');
-
-
-    // }
-
-    // catalogBtn
-}
-subMenuMobile();
-
-
-
 
 
 if (matchMedia) {
@@ -99,35 +118,18 @@ function changes(screen) {
 
 
 
-            if (e.target.classList[0]  === "nav__link-catalog" || e.target.classList.value === 'nav__link _icon-right') {
+            if (e.target.classList[0] === "nav__link-catalog" || e.target.classList.value === 'nav__link _icon-right') {
                 let catalog = document.querySelector('.nav__link-catalog');
                 let catalogBtn = document.querySelector('.block-catalog__text');
                 let navMenu = document.querySelector('.nav__manu');
-                // let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
-
-                // catalog.addEventListener('click', function() {
-
-
 
                 catalogBtn.classList.add('catalog-btn');
                 navMenuWrapper.innerHTML = blickCatalog.innerHTML;
-
-                // if(catalogBtn.classList.contains('catalog-btn')){
-                //     catalogBtn.addEventListener('click', function() {
-                //         console.log(1);
-                //         // this.classList.remove('catalog-btn');
-                //         // navMenuWrapper.innerHTML = navMenu.innerHTML;
-                //     })
-                // }
-                // })
             }
-
-            console.log(e.target.classList.value === 'block-catalog__text catalog-btn')
 
             if (e.target.classList.value === 'block-catalog__text catalog-btn') {
 
                 navMenuWrapper.innerHTML = navMenuClone.innerHTML;
-                console.log(navMenu)
             }
 
 
@@ -141,7 +143,6 @@ function changes(screen) {
                 let itemData = e.target.getAttribute('data-sub-menu');
                 let catalogSubMneu = document.querySelector(`.catalog-sub-menu_${itemData}`)
 
-                console.log(catalogSubMneu);
                 catalogSubMneu.querySelector('.catalog-sub-menu__title').classList.add('title-btn');
                 navMenuWrapper.innerHTML = catalogSubMneu.innerHTML;
 
@@ -158,14 +159,13 @@ function changes(screen) {
 
 
     } else {
-        let navMenu = document.querySelector('.nav__manu-wrapper');
-        let navMenuClone = navMenu.cloneNode(true)
-        let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
-        navMenuWrapper.innerHTML = navMenuClone.innerHTML;
+        // let navMenu = document.querySelector('.nav__manu-wrapper');
+        // let navMenuClone = navMenu.cloneNode(true)
+        // let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
+        // navMenuWrapper.innerHTML = navMenuClone.innerHTML;
 
         document.querySelectorAll('.block-catalog__item').forEach(element => {
             element.classList.remove('blocking');
         })
-        return
     }
 }

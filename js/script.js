@@ -39,7 +39,7 @@ new Swiper('.sales-leaders__slider', {
             spaceBetween: 20,
             slideToClickedSlide: true,
         },
-           1199: {
+        1199: {
             slidesPerView: 3,
             slideToClickedSlide: true,
         },
@@ -51,7 +51,7 @@ new Swiper('.sales-leaders__slider', {
     }
 });
 
-
+// Бургер меню.
 function burgerActive() {
     let btnBurger = document.querySelector('.nav__burger');
     let navMenu = document.querySelector('.nav__wrapper-burger');
@@ -64,7 +64,7 @@ function burgerActive() {
 burgerActive();
 
 
-
+// Відкриваємо меню на desktop.
 function menuCatalog() {
     let catalogItems = document.querySelectorAll('.block-catalog__item');
     let headerContentShadow = document.querySelector('.header-content__shadow');
@@ -72,6 +72,8 @@ function menuCatalog() {
     catalogItems.forEach(element => {
         element.addEventListener('click', function () {
             remuveClassActive();
+
+            this.classList.add('item-active');
 
             let dataSubMenu = this.getAttribute('data-sub-menu');
             let subMenuCatalog = document.querySelector(`.catalog-sub-menu_${dataSubMenu}`);
@@ -84,14 +86,18 @@ function menuCatalog() {
 
                 headerContentShadow.addEventListener('click', function () {
                     headerContentShadow.classList.remove('shadow-active');
-                    subMenuCatalog.classList.remove('catalog-sub-menu-active');
+                    remuveClassActive();
                 })
             }
         })
     })
 
-
+    // Закриваємо меню на desktop.
     function remuveClassActive() {
+        document.querySelectorAll('.block-catalog__item').forEach(element => {
+            element.classList.remove('item-active');
+        })
+
         document.querySelectorAll('.catalog-sub-menu').forEach(element => {
             element.classList.remove('catalog-sub-menu-active');
         })
@@ -100,7 +106,7 @@ function menuCatalog() {
 menuCatalog();
 
 
-
+// Бургер Submenu.
 if (matchMedia) {
     let screen = window.matchMedia("(max-width:992px)");
     screen.addListener(changes);
@@ -176,18 +182,22 @@ function changes(screen) {
     }
 }
 
-let btnStart = document.querySelector('.footer__btn-start');
-document.addEventListener('scroll', function() {
-    if(window.scrollY >= 200){
-        btnStart.classList.add('btn-start-active');
-    } else {
-        btnStart.classList.remove('btn-start-active');
-    }
-})
 
-btnStart.addEventListener('click', function() {
-    window.scrollBy({
-        top: -window.scrollY,
-        behavior: 'smooth'
+function goToTheTop() {
+    let btnStart = document.querySelector('.footer__btn-start');
+    document.addEventListener('scroll', function () {
+        if (window.scrollY >= 200) {
+            btnStart.classList.add('btn-start-active');
+        } else {
+            btnStart.classList.remove('btn-start-active');
+        }
     })
-})
+
+    btnStart.addEventListener('click', function () {
+        window.scrollBy({
+            top: -window.scrollY,
+            behavior: 'smooth'
+        })
+    })
+}
+goToTheTop();

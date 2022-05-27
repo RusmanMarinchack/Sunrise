@@ -51,6 +51,63 @@ new Swiper('.sales-leaders__slider', {
     }
 });
 
+
+let activeSlider = document.querySelector('.tab-body-item-two__swiper');
+let activeItemSlider = document.querySelectorAll('.item-two__swiper-slide');
+const breakpoint = window.matchMedia( '(max-width:992px)' );
+
+let mySwiper;
+
+const breakpointChecker = function() {
+
+   if ( breakpoint.matches === false ) {
+
+      if ( mySwiper !== undefined ) mySwiper.destroy( true, true );
+      activeSlider.classList.add('wrapper');
+      activeItemSlider.forEach(element => {
+        element.classList.remove('swiper-slide')
+      })
+      return;
+
+   } else if ( breakpoint.matches === true ) {
+    activeSlider.classList.remove('wrapper');
+    activeItemSlider.forEach(element => {
+        element.classList.add('swiper-slide')
+      })
+      return enableSwiper();
+   }
+};
+
+const enableSwiper = function() {
+   mySwiper = new Swiper ('.tab-body-item-two__swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    pagination: {
+        el: '.tab-body__swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return `<span class="${className}"><span></span></span>`
+        }
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1, 
+        },
+        500: {
+            slidesPerView: 2, 
+        }
+    }
+   });
+};
+
+
+breakpoint.addListener(breakpointChecker);
+
+breakpointChecker();
+
+
+
+
 // Бургер меню.
 function burgerActive() {
     let btnBurger = document.querySelector('.nav__burger');
@@ -201,3 +258,31 @@ function goToTheTop() {
     })
 }
 goToTheTop();
+
+
+// Таби в блоці may-interest.
+
+function tabs() {
+    let tabBtn = document.querySelectorAll('.may-interest-tabs__tab');
+
+    tabBtn.forEach((element, index) => {
+        element.addEventListener('click', function() {
+            removeClassTabBody();
+            let numberTabBody = this.getAttribute('data-tab-body');
+            let tabBody = document.querySelector(`.tab-body__item_${numberTabBody}`);
+
+            this.classList.add('tab-active');
+            tabBody.classList.add('tab-body-active');
+        })
+    })
+}
+tabs();
+
+function removeClassTabBody() {
+    document.querySelectorAll('.may-interest-tabs__tab').forEach(element => {
+        element.classList.remove('tab-active')
+    });
+    document.querySelectorAll('.tab-body__item').forEach(element => {
+        element.classList.remove('tab-body-active')
+    });
+}

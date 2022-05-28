@@ -50,6 +50,13 @@ select {
   }
 }
 
+.minus.minus-active{
+  color: #8d8d8d;
+}
+.plus.plus-active{
+  color: #8d8d8d;
+}
+
 ._container {
   max-width: 1440px;
   margin: 0 auto;
@@ -1509,6 +1516,7 @@ select {
       &__tab {
         position: relative;
         padding-bottom: 5px;
+        cursor: pointer;
         @media (hover: hover) {
           &:hover::before {
             width: 60%;
@@ -1549,7 +1557,7 @@ select {
       // .tab-body-item-two__big-block
   
       .big-block {
-        width: 50%;
+        width: 40%;
         padding: 20px;
         border: 1px solid #e4e4e4;
         border-radius: 4px;
@@ -1626,7 +1634,34 @@ select {
               transform: rotate(358deg);
             }
           }
-      
+          
+          &__ends{
+            margin: 30px 0;
+          }
+
+          &__progress-bar{
+            width: 100%;
+            height: 4px;
+            margin-bottom: 10px;
+            background-color: rgba(228, 228, 228, 1);
+            position: relative;
+            border-radius: 4px;
+            span{
+              position: absolute;
+              top: 0; left: 0;
+              height: 100%;
+              background-color: $colorOreng;
+            }
+          }
+
+          &__label{
+            font-size: 14px;
+            color: $colorSilver;
+            span{
+              color: #525252;
+            }
+          }
+
           // .big-block__block-btn
           .big-block-btn {
             .tab-body-btn__btn{
@@ -1664,29 +1699,15 @@ select {
 
         // .product-block-btn__btn
 
-        // .big-block-btn__btn {
-          
-        //   @media screen and (max-width: 700px) {
-        //     padding: 14px 18px;
-        //   }
-        //   @media screen and (max-width: 500px) {
-        //     padding: 14px 57px;
-        //   }
-        // }
         }
       }
     
-      // .tab-body-btn {
-      
-      //   // .tab-body-btn__btn
-    
-      //   &__btn {
-      //   }
+
   
       // .tab-body-item-two__swiper
   
       .item-two {
-        width: 50%;
+        width: 60%;
         @media screen and (max-width: 1240px) {
           width: 100%;
         }
@@ -1697,30 +1718,24 @@ select {
         // .item-two__swiper-wrapper
     
         &__swiper-wrapper {
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           column-gap: 20px;
           row-gap: 15px;
           @media screen and (max-width: 992px) {
             gap: 0;
-            flex-wrap: nowrap;
+            display: flex;
           }
         }
     
         // .item-two__swiper-slide
     
         &__swiper-slide {
-          max-width: 219px;
           width: 100%;
           padding: 20px;
           border: 1px solid rgba(228, 228, 228, 1);
           border-radius: 4px;
           position: relative;
-          @media screen and (max-width: 1440px) {
-            max-width: 186px;
-          }
-          @media screen and (max-width: 992px) {
-            max-width: 100%;
-          }
           a{
             display: block;
             position: relative;
@@ -1769,6 +1784,9 @@ select {
           display: inline-block;
           font-size: 26px;
           font-weight: 700;
+          @media screen and (max-width: 1240px) {
+            display: block;
+          }
         }
     
         // .item-two__pld-price
@@ -1799,7 +1817,6 @@ select {
           @media screen and (max-width: 992px) {
             display: flex;
           }
-          // .product-block-btn__wrapper-namber
   
           &__wrapper-namber {
             border: 1px solid rgba(228, 228, 228, 1);
@@ -1808,30 +1825,24 @@ select {
             padding: 10px;
           }
   
-          // .product-block-btn__minus
   
           &__minus,
           &__plus {
             border: none;
             background: transparent;
           }
-  
-          // .product-block-btn__namber
-  
-          &__namber {
-          }
-  
-          // .product-block-btn__btn
-  
+        
           &__btn {
             color: #fff;
+            @media screen and (max-width: 650px) {
+              padding: 14px 18px;
+            }
             @media screen and (max-width: 350px) {
               padding: 14px 50px;
             }
           }
         }
     }
-  // }
 
 }
 

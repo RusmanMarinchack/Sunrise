@@ -286,3 +286,77 @@ function removeClassTabBody() {
         element.classList.remove('tab-body-active')
     });
 }
+
+
+// прогрес бар в блоці May interes ====================
+function progresBar() {
+    let progresBar = document.querySelector('.big-block__progress-bar')
+    let labelGoods = document.querySelector('.big-block__label')
+    let leangthGoods = labelGoods.querySelector('span');
+
+    console.log(leangthGoods.innerHTML)
+    progresBar.querySelector('span').style.width = `${leangthGoods.innerHTML * 10}%`;
+}
+progresBar();
+
+
+function plusMinusGoodss() {
+    let plus = document.querySelectorAll('.plus');
+    let minus = document.querySelectorAll('.minus');
+    // let length = document.querySelectorAll('.minus');
+
+    plus.forEach(element => {
+        element.addEventListener('click', function() {
+            let parentBlock = this.parentNode;
+            let number = parentBlock.querySelector('span');
+
+            if (number.innerHTML > '-1') {
+                minus.forEach(element => {
+                    element.classList.remove('minus-active');
+                })
+                
+            }
+            number.innerHTML++
+            
+            if(parentBlock.classList.contains('big-block-btn__wrapper-namber')){
+                let card = parentBlock.parentNode.parentNode;
+                let remainderGoods = card.querySelector('.big-block__label').querySelector('span');
+                if(remainderGoods.innerHTML <= number.innerHTML){
+                    element.classList.add('plus-active');
+                    number.innerHTML = remainderGoods.innerHTML
+                } 
+
+            }
+
+        })
+    })
+
+    minus.forEach(element => {
+        element.addEventListener('click', function() {
+            let parentBlock = this.parentNode;
+            let number = parentBlock.querySelector('span');
+
+            number.innerHTML--
+            if(number.innerHTML < '1'){
+                this.classList.add('minus-active');
+                number.innerHTML = '0';
+                
+            }
+
+            if(parentBlock.classList.contains('big-block-btn__wrapper-namber')){
+                let card = parentBlock.parentNode.parentNode;
+                let remainderGoods = card.querySelector('.big-block__label').querySelector('span');
+                if(remainderGoods.innerHTML > number.innerHTML){
+                    plus.forEach(element => {
+                        element.classList.remove('plus-active');
+                    })
+                    
+                } 
+
+            }
+            console.log(number.innerHTML == '0')
+
+        })
+    })
+};
+plusMinusGoodss();

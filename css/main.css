@@ -296,6 +296,14 @@ select {
   }
 }
 
+.minus.minus-active {
+  color: #8d8d8d;
+}
+
+.plus.plus-active {
+  color: #8d8d8d;
+}
+
 ._container {
   max-width: 1440px;
   margin: 0 auto;
@@ -1929,6 +1937,7 @@ select {
 .main .may-interest .may-interest-tabs__tab {
   position: relative;
   padding-bottom: 5px;
+  cursor: pointer;
 }
 
 @media (hover: hover) {
@@ -1979,7 +1988,7 @@ select {
 }
 
 .main .may-interest .tab-body-item-two .big-block {
-  width: 50%;
+  width: 40%;
   padding: 20px;
   border: 1px solid #e4e4e4;
   border-radius: 4px;
@@ -2047,6 +2056,36 @@ select {
           transform: rotate(358deg);
 }
 
+.main .may-interest .tab-body-item-two .big-block__ends {
+  margin: 30px 0;
+}
+
+.main .may-interest .tab-body-item-two .big-block__progress-bar {
+  width: 100%;
+  height: 4px;
+  margin-bottom: 10px;
+  background-color: #e4e4e4;
+  position: relative;
+  border-radius: 4px;
+}
+
+.main .may-interest .tab-body-item-two .big-block__progress-bar span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #eb7047;
+}
+
+.main .may-interest .tab-body-item-two .big-block__label {
+  font-size: 14px;
+  color: #767676;
+}
+
+.main .may-interest .tab-body-item-two .big-block__label span {
+  color: #525252;
+}
+
 .main .may-interest .tab-body-item-two .big-block .big-block-btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2081,7 +2120,7 @@ select {
 }
 
 .main .may-interest .tab-body-item-two .item-two {
-  width: 50%;
+  width: 60%;
 }
 
 @media screen and (max-width: 1240px) {
@@ -2097,8 +2136,10 @@ select {
 }
 
 .main .may-interest .tab-body-item-two .item-two__swiper-wrapper {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   -webkit-column-gap: 20px;
           column-gap: 20px;
   row-gap: 15px;
@@ -2107,30 +2148,18 @@ select {
 @media screen and (max-width: 992px) {
   .main .may-interest .tab-body-item-two .item-two__swiper-wrapper {
     gap: 0;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
 .main .may-interest .tab-body-item-two .item-two__swiper-slide {
-  max-width: 219px;
   width: 100%;
   padding: 20px;
   border: 1px solid #e4e4e4;
   border-radius: 4px;
   position: relative;
-}
-
-@media screen and (max-width: 1440px) {
-  .main .may-interest .tab-body-item-two .item-two__swiper-slide {
-    max-width: 186px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .main .may-interest .tab-body-item-two .item-two__swiper-slide {
-    max-width: 100%;
-  }
 }
 
 .main .may-interest .tab-body-item-two .item-two__swiper-slide a {
@@ -2162,6 +2191,12 @@ select {
   display: inline-block;
   font-size: 26px;
   font-weight: 700;
+}
+
+@media screen and (max-width: 1240px) {
+  .main .may-interest .tab-body-item-two .item-two__price {
+    display: block;
+  }
 }
 
 .main .may-interest .tab-body-item-two .item-two__pld-price {
@@ -2220,6 +2255,12 @@ select {
 
 .main .may-interest .tab-body-item-two .item-two .item-two-block-btn__btn {
   color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+  .main .may-interest .tab-body-item-two .item-two .item-two-block-btn__btn {
+    padding: 14px 18px;
+  }
 }
 
 @media screen and (max-width: 350px) {

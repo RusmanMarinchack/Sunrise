@@ -51,61 +51,65 @@ new Swiper('.sales-leaders__slider', {
     }
 });
 
+// Перевірка на знаходження на головній сторінці.
+if (document.body.classList.contains('home')) {
+    let activeSlider = document.querySelector('.tab-body-item-two__swiper');
+    let activeItemSlider = document.querySelectorAll('.item-two__swiper-slide');
+    const breakpoint = window.matchMedia('(max-width:992px)');
 
-let activeSlider = document.querySelector('.tab-body-item-two__swiper');
-let activeItemSlider = document.querySelectorAll('.item-two__swiper-slide');
-const breakpoint = window.matchMedia( '(max-width:992px)' );
+    let mySwiper;
 
-let mySwiper;
+    const breakpointChecker = function () {
 
-const breakpointChecker = function() {
+        if (breakpoint.matches === false) {
 
-   if ( breakpoint.matches === false ) {
+            if (mySwiper !== undefined) mySwiper.destroy(true, true);
+            activeSlider.classList.add('wrapper');
+            activeItemSlider.forEach(element => {
+                element.classList.remove('swiper-slide')
+            })
+            return;
 
-      if ( mySwiper !== undefined ) mySwiper.destroy( true, true );
-      activeSlider.classList.add('wrapper');
-      activeItemSlider.forEach(element => {
-        element.classList.remove('swiper-slide')
-      })
-      return;
-
-   } else if ( breakpoint.matches === true ) {
-    activeSlider.classList.remove('wrapper');
-    activeItemSlider.forEach(element => {
-        element.classList.add('swiper-slide')
-      })
-      return enableSwiper();
-   }
-};
-
-const enableSwiper = function() {
-   mySwiper = new Swiper ('.tab-body-item-two__swiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    pagination: {
-        el: '.tab-body__swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return `<span class="${className}"><span></span></span>`
+        } else if (breakpoint.matches === true) {
+            activeSlider.classList.remove('wrapper');
+            activeItemSlider.forEach(element => {
+                element.classList.add('swiper-slide')
+            })
+            return enableSwiper();
         }
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1, 
-        },
-        500: {
-            slidesPerView: 2, 
-        }
-    }
-   });
-};
+    };
+
+    const enableSwiper = function () {
+        mySwiper = new Swiper('.tab-body-item-two__swiper', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            pagination: {
+                el: '.tab-body__swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return `<span class="${className}"><span></span></span>`
+                }
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                500: {
+                    slidesPerView: 2,
+                }
+            }
+        });
+    };
 
 
-breakpoint.addListener(breakpointChecker);
+    breakpoint.addListener(breakpointChecker);
 
-breakpointChecker();
+    breakpointChecker();
 
 
+    progresBar();
+    errorForm('.order-block-form__form');
+}
 
 
 // Бургер меню.
@@ -182,7 +186,6 @@ function changes(screen) {
         })
 
         document.addEventListener('click', function (e) {
-            console.log(e.target.classList.value)
             let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
 
 
@@ -228,15 +231,13 @@ function changes(screen) {
 
 
     } else {
-        // let navMenu = document.querySelector('.nav__manu-wrapper');
-        // let navMenuClone = navMenu.cloneNode(true)
-        // let navMenuWrapper = document.querySelector('.nav__manu-wrapper');
-        // navMenuWrapper.innerHTML = navMenuClone.innerHTML;
 
         document.querySelectorAll('.block-catalog__item').forEach(element => {
             element.classList.remove('blocking');
         })
     }
+
+
 }
 
 
@@ -266,7 +267,7 @@ function tabs() {
     let tabBtn = document.querySelectorAll('.may-interest-tabs__tab');
 
     tabBtn.forEach((element, index) => {
-        element.addEventListener('click', function() {
+        element.addEventListener('click', function () {
             removeClassTabBody();
             let numberTabBody = this.getAttribute('data-tab-body');
             let tabBody = document.querySelector(`.tab-body__item_${numberTabBody}`);
@@ -294,19 +295,17 @@ function progresBar() {
     let labelGoods = document.querySelector('.big-block__label')
     let leangthGoods = labelGoods.querySelector('span');
 
-    console.log(leangthGoods.innerHTML)
     progresBar.querySelector('span').style.width = `${leangthGoods.innerHTML * 10}%`;
 }
-progresBar();
+
 
 
 function plusMinusGoodss() {
     let plus = document.querySelectorAll('.plus');
     let minus = document.querySelectorAll('.minus');
-    // let length = document.querySelectorAll('.minus');
 
     plus.forEach(element => {
-        element.addEventListener('click', function() {
+        element.addEventListener('click', function () {
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
@@ -314,17 +313,18 @@ function plusMinusGoodss() {
                 minus.forEach(element => {
                     element.classList.remove('minus-active');
                 })
-                
+
             }
             number.innerHTML++
-            
-            if(parentBlock.classList.contains('big-block-btn__wrapper-namber')){
+
+            if (parentBlock.classList.contains('big-block-btn__wrapper-namber')) {
                 let card = parentBlock.parentNode.parentNode;
                 let remainderGoods = card.querySelector('.big-block__label').querySelector('span');
-                if(remainderGoods.innerHTML <= number.innerHTML){
+                if (remainderGoods.innerHTML <= number.innerHTML) {
+                    number.innerHTML = remainderGoods.innerHTML;
                     element.classList.add('plus-active');
-                    number.innerHTML = remainderGoods.innerHTML
-                } 
+
+                }
 
             }
 
@@ -332,31 +332,108 @@ function plusMinusGoodss() {
     })
 
     minus.forEach(element => {
-        element.addEventListener('click', function() {
+        element.addEventListener('click', function () {
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
             number.innerHTML--
-            if(number.innerHTML < '1'){
+            if (number.innerHTML < '1') {
                 this.classList.add('minus-active');
                 number.innerHTML = '0';
-                
+
             }
 
-            if(parentBlock.classList.contains('big-block-btn__wrapper-namber')){
+            if (parentBlock.classList.contains('big-block-btn__wrapper-namber')) {
                 let card = parentBlock.parentNode.parentNode;
                 let remainderGoods = card.querySelector('.big-block__label').querySelector('span');
-                if(remainderGoods.innerHTML > number.innerHTML){
+                if (remainderGoods.innerHTML > number.innerHTML) {
                     plus.forEach(element => {
                         element.classList.remove('plus-active');
                     })
-                    
-                } 
+
+                }
 
             }
-            console.log(number.innerHTML == '0')
 
         })
     })
 };
 plusMinusGoodss();
+
+
+
+// Product card
+if (document.body.classList.contains('product')) {
+    toReceive();
+    errorForm('.product-options__form');
+
+    let headerContentShadow = document.querySelector('.header-content__shadow');
+    let blockCatalog = document.querySelector('.block-catalog__wrapper');
+    document.addEventListener('click', function (e) {
+        console.log(e.target.classList)
+
+        // Ховаємо і вивзиваємо меню каталог.
+        if (e.target.classList[0] === 'block-catalog__text') {
+
+            blockCatalog.classList.toggle('active-catalog');
+            headerContentShadow.classList.add('shadow-active');
+        }
+        if (e.target.classList[0] === 'block-catalog__text') {
+            if (!document.querySelector('.block-catalog__wrapper').classList.contains('active-catalog')) {
+                headerContentShadow.classList.remove('shadow-active');
+            }
+        }
+        if (e.target.classList[0] === 'header-content__shadow') {
+            blockCatalog.classList.remove('active-catalog');
+            headerContentShadow.classList.remove('shadow-active');
+        }
+        if (e.target.classList[0] === 'product-options-form__btn'){
+            errorForm('.product-options-form');
+        }
+
+
+    })
+}
+
+
+// Перевірка форми чи не пустий інпут і виводимо ошибку.
+function errorForm(addClass) {
+    let form = document.querySelector(addClass);
+
+    form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let input = form.querySelectorAll('.input');
+            input.forEach(element => {
+                if (element.value === '') {
+                    element.classList.add('input-error');
+                } else {
+                    element.classList.remove('input-error');
+                }
+            })
+
+
+        })
+}
+errorForm('.dont-miss-form');
+
+
+// Получаємо src фото в блоці product-description__imegs-list
+function toReceive() {
+    let productImegs = document.querySelectorAll('.product-description__img');
+    let productBigImg = document.querySelector('.product-description__big-img');
+    productImegs.forEach(element => {
+        element.addEventListener('click', function () {
+            removeClassActiveImg();
+            this.parentNode.classList.add('img-active');
+            console.log(this.parentNode)
+            productBigImg.innerHTML = `<img src="${this.getAttribute('src')}" alt="Product" />`;
+        })
+    })
+}
+
+function removeClassActiveImg() {
+    document.querySelectorAll('.product-description__item').forEach(element => {
+        element.classList.remove('img-active')
+    })
+}

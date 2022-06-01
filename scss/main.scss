@@ -63,6 +63,15 @@ select {
   font-size: 14px;
   background-color: $colorOreng;
   color: #fff;
+  transition: background 0.3s;
+  @media (hover: hover) {
+    &:hover{
+      background-color: #e35b2e;
+    }
+  }
+  &:active{
+    box-shadow: 0 5px 5px 0 #00000040 inset;
+  }
 }
 
 .input.input-error{
@@ -791,7 +800,7 @@ select {
       // .block-catalog__menu
 
       &__menu {
-        max-height: 660px;
+        max-height: 670px;
         list-style: none;
         overflow-y: auto;
         overflow-x: hidden;

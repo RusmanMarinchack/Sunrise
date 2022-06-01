@@ -408,6 +408,7 @@ select {
       }
 
       &__manu-wrapper {
+        margin: 0 20px;
         & .block-catalog__wrapper,
         .catalog-sub-menu__wrapper {
           overflow: auto;
@@ -440,7 +441,7 @@ select {
           }
         }
         & .block-catalog__text {
-          padding: 20px;
+          padding: 15px;
           text-transform: uppercase;
           & span::before {
             padding-right: 10px;
@@ -452,7 +453,7 @@ select {
           border-top: 1px solid rgba(228, 228, 228, 1);
           border-bottom: 1px solid rgba(228, 228, 228, 1);
           list-style: none;
-          margin: 0 20px;
+          margin-left: 20px;
           padding: 20px 0;
 
           & .catalog-sub-menu__item {
@@ -466,7 +467,7 @@ select {
           }
         }
         & .catalog-sub-menu__title {
-          margin: 20px;
+          padding: 15px;
           & span::before {
             padding-right: 10px;
             font-size: 16px;

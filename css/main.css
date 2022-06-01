@@ -726,6 +726,10 @@ select {
   }
 }
 
+.header .header-top .nav__manu-wrapper {
+  margin: 0 20px;
+}
+
 .header .header-top .nav__manu-wrapper .block-catalog__wrapper,
 .header .header-top .nav__manu-wrapper .catalog-sub-menu__wrapper {
   overflow: auto;
@@ -767,7 +771,7 @@ select {
 }
 
 .header .header-top .nav__manu-wrapper .block-catalog__text {
-  padding: 20px;
+  padding: 15px;
   text-transform: uppercase;
 }
 
@@ -780,7 +784,7 @@ select {
   border-top: 1px solid #e4e4e4;
   border-bottom: 1px solid #e4e4e4;
   list-style: none;
-  margin: 0 20px;
+  margin-left: 20px;
   padding: 20px 0;
 }
 
@@ -794,7 +798,7 @@ select {
 }
 
 .header .header-top .nav__manu-wrapper .catalog-sub-menu__title {
-  margin: 20px;
+  padding: 15px;
 }
 
 .header .header-top .nav__manu-wrapper .catalog-sub-menu__title span::before {

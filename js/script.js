@@ -309,7 +309,7 @@ function plusMinusGoodss() {
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
-            if (number.innerHTML > '-1') {
+            if (number.innerHTML > '0') {
                 minus.forEach(element => {
                     element.classList.remove('minus-active');
                 })
@@ -337,9 +337,9 @@ function plusMinusGoodss() {
             let number = parentBlock.querySelector('span');
 
             number.innerHTML--
-            if (number.innerHTML < '1') {
+            if (number.innerHTML < '2') {
                 this.classList.add('minus-active');
-                number.innerHTML = '0';
+                number.innerHTML = '1';
 
             }
 
@@ -399,8 +399,8 @@ if (document.body.classList.contains('product')) {
 // Перевірка форми чи не пустий інпут і виводимо ошибку.
 function errorForm(addClass) {
     let form = document.querySelector(addClass);
-
-    form.addEventListener('submit', function (e) {
+    if(form){
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             let input = form.querySelectorAll('.input');
@@ -414,8 +414,9 @@ function errorForm(addClass) {
 
 
         })
+    }
 }
-errorForm('.dont-miss-form');
+
 
 
 // Получаємо src фото в блоці product-description__imegs-list
@@ -436,4 +437,47 @@ function removeClassActiveImg() {
     document.querySelectorAll('.product-description__item').forEach(element => {
         element.classList.remove('img-active')
     })
+};
+
+
+function creatSlider() {
+    let btnRight = document.querySelector('.btn-right');
+let btnLeft = document.querySelector('.btn-left');
+let basketProgresItemWrapper = document.querySelector('.basket-list__wrapper');
+let basketProgresItem = document.querySelectorAll('.basket-list__item');
+let basketProgresItemLengrh = basketProgresItem.length;
+basketProgresItemLengrh = basketProgresItemLengrh - 1;
+
+if(basketProgresItemLengrh === (basketProgresItem.length - 1)){
+    btnLeft.classList.add('not-active');
 }
+
+btnRight.addEventListener('click', function() {
+    basketProgresItemLengrh--
+    if(basketProgresItemLengrh <= '0'){
+        basketProgresItemLengrh = 0;
+        this.classList.add('not-active');
+    }
+
+    if(basketProgresItemLengrh < (basketProgresItem.length - 1)) {
+        btnLeft.classList.remove('not-active');
+    }
+
+    basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
+})
+
+btnLeft.addEventListener('click', function() {
+    basketProgresItemLengrh++
+    if(basketProgresItemLengrh >= (basketProgresItem.length - 1)){
+        basketProgresItemLengrh = (basketProgresItem.length - 1);
+        this.classList.add('not-active');
+    } 
+
+    if(basketProgresItemLengrh < (basketProgresItem.length - 1)) {
+        btnRight.classList.remove('not-active');
+    }
+
+    basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
+})
+}
+creatSlider();

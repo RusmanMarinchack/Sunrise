@@ -109,6 +109,7 @@ if (document.body.classList.contains('home')) {
 
     progresBar();
     errorForm('.order-block-form__form');
+    errorForm('.dont-miss-form');
 }
 
 
@@ -276,18 +277,20 @@ function tabs() {
             tabBody.classList.add('tab-body-active');
         })
     })
+
+    function removeClassTabBody() {
+        tabBtn.forEach(element => {
+            element.classList.remove('tab-active')
+        });
+        document.querySelectorAll('.tab-body__item').forEach(element => {
+            element.classList.remove('tab-body-active')
+        });
+    }
 }
+
+
+
 tabs();
-
-function removeClassTabBody() {
-    document.querySelectorAll('.may-interest-tabs__tab').forEach(element => {
-        element.classList.remove('tab-active')
-    });
-    document.querySelectorAll('.tab-body__item').forEach(element => {
-        element.classList.remove('tab-body-active')
-    });
-}
-
 
 // прогрес бар в блоці May interes ====================
 function progresBar() {
@@ -393,6 +396,11 @@ if (document.body.classList.contains('product')) {
 
 
     })
+
+    errorForm('.dont-miss-form');
+    errorForm('.basket-body-two-form');
+    tabBtnRadio();
+    creatSlider();
 }
 
 
@@ -416,6 +424,8 @@ function errorForm(addClass) {
         })
     }
 }
+
+
 
 
 
@@ -480,11 +490,11 @@ btnLeft.addEventListener('click', function() {
     basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
 })
 }
-creatSlider();
 
 
-
-let tabsRadio = document.querySelectorAll('.form-tabs__radio');
+// Робимо радіокнопки табами в формі basket-body-two-form
+function tabBtnRadio() {
+    let tabsRadio = document.querySelectorAll('.form-tabs__radio');
 
 tabsRadio.forEach(element => {
     element.addEventListener('change', function() {
@@ -503,9 +513,31 @@ tabsRadio.forEach(element => {
 
     })
 })
+}
 
 function removeClassTabBody() {
     document.querySelectorAll(`.tab-body`).forEach(element => {
         element.classList.remove('tab-body-active');
+    })
+}
+
+
+
+let basketListItem = document.querySelectorAll('.basket-list__item');
+
+basketListItem.forEach(element => {
+    element.addEventListener('click', function() {
+        if(this.classList.contains('active-item')){
+            removeClassRemovwItem();
+            let activeItem = this.getAttribute('data-item-progres');
+            let activeItemProgres = document.querySelector(`.basket__body_${activeItem}`);
+            activeItemProgres.classList.add('basket-body-active')
+        }
+    })
+})
+
+function removeClassRemovwItem() {
+    document.querySelectorAll('.basket__body').forEach(element => {
+        element.classList.remove('basket-body-active');
     })
 }

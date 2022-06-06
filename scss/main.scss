@@ -37,7 +37,7 @@ body {
   &.product .block-catalog__wrapper.active-catalog{
     opacity: 1;
     visibility: visible;
-    padding: 40px 15px 40px 40px;
+    // padding: 40px 15px 40px 40px;
   }
   &.product .header .header-content .block-catalog .catalog-sub-menu{
     top: 0;
@@ -128,7 +128,7 @@ select {
   border: 1px solid rgba(228, 228, 228, 1);
   border-radius: 4px;
   column-gap: 15px;
-  padding: 10px;
+  padding: 10px 5px;
   &__minus,
   &__plus {
   border: none;
@@ -2253,6 +2253,12 @@ select {
         width: 100%;
         color: $colorSilver;
         transition: all 0.3s;
+        &.active-item{
+          cursor: pointer;
+        }
+        &.active-item .basket-list__name{
+          color: #000;
+        }
         @media screen and (max-width: 992px){
           text-align: center;
         }
@@ -2270,9 +2276,6 @@ select {
         font-weight: 400;
         font-size: 18px;
         margin-bottom: 10px;
-        &.active-item{
-          color: #000;
-        }
         @media screen and (max-width: 576px){
           font-size: 14px;
           margin-bottom: 5px;
@@ -2352,8 +2355,12 @@ select {
 
 		// .basket__body
     .basket-body-one {
+      display: none;
         justify-content: space-between;
         gap: 58px;
+        &.basket-body-active{
+          display: flex;
+        }
 
         @media screen and (max-width: 1240px) {
           flex-direction: column;
@@ -2750,6 +2757,9 @@ select {
                 }
               }
               .form-tabs-checkbox::before{
+                border-radius: 0%;
+              }
+              .form-tabs-checkbox::after{
                 border-radius: 0%;
               }
             }

@@ -481,3 +481,31 @@ btnLeft.addEventListener('click', function() {
 })
 }
 creatSlider();
+
+
+
+let tabsRadio = document.querySelectorAll('.form-tabs__radio');
+
+tabsRadio.forEach(element => {
+    element.addEventListener('change', function() {
+        let dataItemForm = this.getAttribute('data-item-form');
+        if(dataItemForm){
+            removeClassTabBody();
+            document.querySelector(`.basket-body-two-form__tab-body_${dataItemForm}`).classList.add('tab-body-active');
+
+            let blockChekbox = document.querySelector('.block-checkbox');
+            if(dataItemForm === '3') {
+                blockChekbox.style.display = 'block';
+            } else {
+                blockChekbox.style.display = 'none';
+            }
+        }
+
+    })
+})
+
+function removeClassTabBody() {
+    document.querySelectorAll(`.tab-body`).forEach(element => {
+        element.classList.remove('tab-body-active');
+    })
+}

@@ -103,7 +103,7 @@
             </li>
             <li class="header-wrapper__item">
               <a href="#" class="header-wrapper__link _icon-basket"
-                ><span>0</span></a
+                ><span>3</span></a
               >
             </li>
           </ul>
@@ -154,7 +154,7 @@
             </li>
             <li class="header-wrapper__item">
               <a href="#" class="header-wrapper__link _icon-basket"
-                ><span>0</span></a
+                ><span>3</span></a
               >
             </li>
           </ul>
@@ -834,11 +834,140 @@
                             <button class="basket-order-block__btn btn">Перейти до оформлення замовлення </button>
                         </div>
                     </div>
-                    <div class="basket__body basket-body-two">
-                      <form action="#" class="basket-body-two__form">
-                        <input type="text" class="input">
-                        <button></button>
-                      </form>
+                    <div class="basket__body basket-body-two basket-body-active">
+                      <div class="basket-body-two__block-form">
+                        <form action="#" class="basket-body-two__form basket-body-two-form">
+                          <div class="basket-body-two-form__main">
+                            <div class="basket-body-two-form__title">Контактні дані</div>
+                            <div class="basket-body-two-form__item two-form-item">
+                              <div class="two-form-item__wrapper">
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-name">Ім’я</label>
+                                  <input type="text" class="two-form-item__input input" id="basket-two-name">
+                                </div>
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-surname">Прізвище</label>
+                                  <input type="text" class="two-form-item__input input" id="basket-two-surname">
+                                </div>
+                              </div>
+                              <div class="two-form-item__wrapper">
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-phone">Номер телефону</label>
+                                  <input type="number" class="two-form-item__input input" id="basket-two-phone">
+                                </div>
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-email">Е-мейл</label>
+                                  <input type="email" class="two-form-item__input input" id="basket-two-email">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="basket-body-two-form__title">Спосіб доставки</div>
+                            <div class="basket-body-two-form__item two-form-item">
+                              <div class="two-form-item__main form-main-two">
+                                <div class="basket-body-two-form__tabs form-tabs">
+                                  <div class="form-tabs__tab">
+                                    <input checked type="radio" class="form-tabs__radio" id="form-tabs-radio-1" data-item-form="1" name="input">  
+                                    <label for="form-tabs-radio-1" class="form-tabs-radio">Самовивіз</label>
+                                  </div>
+                                  <div class="form-tabs__tab">
+                                    <input type="radio" class="form-tabs__radio" id="form-tabs-radio-2" data-item-form="2" name="input">
+                                    <label for="form-tabs-radio-2" class="form-tabs-radio">Доставка в Чернівцях</label>
+                                  </div>
+                                  <div class="form-tabs__tab">
+                                    <input type="radio" class="form-tabs__radio" id="form-tabs-radio-3" data-item-form="3" name="input">
+                                    <label for="form-tabs-radio-3" class="form-tabs-radio">Нова Пошта</label>
+                                  </div>
+                                  <div class="form-tabs__tab block-checkbox">
+                                    <input type="checkbox" class="form-tabs__radio" id="form-tabs-checkbox" name="input-chekbox">
+                                    <label for="form-tabs-checkbox" class="form-tabs-radio form-tabs-checkbox">Доставка кур’єром</label>
+                                  </div>
+                                </div>
+                                <div class="basket-body-two-form__tab-body_1 tab-body tab-body-active">
+                                  <div class="tab-body__item">
+                                    <input type="text" class="tab-body__input input" id="basket-two-city">
+                                    <label for="basket-two-city">Місто</label>
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Адреса</label>
+                                    <input type="text" class="tab-body__input input" id="basket-two-addres">
+                                  </div>
+                                </div>
+                                <div class="basket-body-two-form__tab-body_2 tab-body">
+                                  <div class="tab-body__item">
+                                    <input type="text" class="tab-body__input input" id="basket-two-city">
+                                    <label for="basket-two-city">Місто</label>
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Вулиця</label>
+                                    <input type="text" class="tab-body__input input" id="basket-two-addres">
+                                  </div>
+                                </div>
+                                <div class="basket-body-two-form__tab-body_3 tab-body">
+                                  <div class="tab-body__item">
+                                    <input type="text" class="tab-body__input input" id="basket-two-city">
+                                    <label for="basket-two-city">Область</label>
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Місто</label>
+                                    <input type="text" class="tab-body__input input" id="basket-two-addres">
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Відділення Нової Пошти</label>
+                                    <input type="text" class="tab-body__input input" id="basket-two-addres">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="basket-body-two-form__title">Спосіб Оплати</div>
+                            <div class="basket-body-two-form__item two-form-item">
+                              <div class="two-form-item__wrapper">
+                              <div class="two-form-item__block">
+                                <div class="form-tabs__tab">
+                                  <input checked type="radio" class="form-tabs__radio" id="form-tabs-radio-4" name="payment">  
+                                  <label for="form-tabs-radio-4" class="form-tabs-radio">Оплата при отриманні</label>
+                                </div>
+                                <div class="form-tabs__tab">
+                                  <input type="radio" class="form-tabs__radio" id="form-tabs-radio-5" name="payment">  
+                                  <label for="form-tabs-radio-5" class="form-tabs-radio">Безготівковий розрахунок</label>
+                                </div>
+                              </div>
+                              <div class="two-form-item__block-textarea">
+                                <textarea name="block-textarea" id="block-textarea"></textarea>
+                                <label for="block-textarea">Коментар</label>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="basket-body-two-form__order two-form-order">
+                            <div class="two-form-order__wrapper">
+                              <h2 class="two-form-order__title">Ваше замволення</h2>
+                              <div class="two-form-order__labels">
+                                <span>Товар</span>
+                                <span>Ціна</span>
+                              </div>
+                              <div class="two-form-order__body two-form-order-body">
+                                <div class="two-form-order-body__label">Ролети день-ніч Secret Cвітло-коричневий x2</div>
+                                <div class="two-form-order-body__value">1198 грн</div>
+                                <div class="two-form-order-body__label">Ролети Elite Special Edit сірі</div>
+                                <div class="two-form-order-body__value">879 грн</div>
+                                <div class="two-form-order-body__label">Ролети Premium сірі 2021 x3</div>
+                                <div class="two-form-order-body__value">2997 грн</div>
+                              </div>
+                              <div class="two-form-order__body two-form-order-body">
+                                <div class="two-form-order-body__label"><span>Загальна вартість</span></div>
+                                <div class="two-form-order-body__value"><span>5374 грн</span></div>
+                                <div class="two-form-order-body__label"><span>Спосіб доставки</span></div>
+                                <div class="two-form-order-body__value">Самовивіз</div>
+                              </div>
+                              <div class="two-form-order__body two-form-order-body">
+                                <div class="two-form-order-body__label"><span>Спосіб Оплати</span></div>
+                                <div class="two-form-order-body__value">При отриманні</div>
+                              </div>
+                            </div>
+                            <button class="two-form-order__btn btn" type="submit">Оформити замовлення</button>
+                          </div>
+                        </form> 
+                      </div>
                     </div>
                     <div class="basket__body basket-body-thre"></div>
                 </div>

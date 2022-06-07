@@ -2344,7 +2344,6 @@ select {
 		// .basket__wrapper
 
 		&__wrapper {
-      padding-bottom: 100px;
 
 		}
     &__body{
@@ -2534,6 +2533,13 @@ select {
         // .basket-body-one__order-block
     
         .basket-order-block {
+          @media screen and (max-width: 992px) {
+            width: 55%;
+            margin: 0 auto;
+          }
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
 
           // .basket-order-block__wrapper
       
@@ -2609,8 +2615,10 @@ select {
       
           &__btn {
               padding: 18px 60px;
-              @media screen and (max-width: 576px) {
+              @media screen and (max-width: 992px) {
                 width: 100%;
+              }
+              @media screen and (max-width: 576px) {
                 padding: 18px 0px;
               }
           }
@@ -2965,8 +2973,168 @@ select {
         }
     }
     }
-    .basket-body-thre {
+
+      .basket-body-thre {
+        margin-bottom: 100px;
+        @media screen and (max-width: 768px) {
+          margin-bottom: 40px;
+        }
+
+        // .basket-body-thre__wrapper
+    
+        &__wrapper {
+          max-width: 900px;
+          width: 100%;
+          margin: 0 auto;
+        }
+    
+        // .basket-body-thre__item
+    
+        .basket-body-thre-item {
+          text-align: center;
+          margin-bottom: 40px;
+          @media screen and (max-width: 576px) {
+            margin-bottom: 20px;
+          }
+    
+          // .basket-body-thre-item__icon
+      
+          &__icon {
+          }
+      
+          // .basket-body-thre-item__title
+      
+          &__title {
+            font-size: 35px;
+          }
+      
+          // .basket-body-thre-item__sub-title
+      
+          &__sub-title {
+            font-size: 15px;
+            color: $colorSilver;
+          }
+      
+          // .basket-body-thre-item__wrapper
+      
+          &__wrapper {
+          }
+      }
+      .thre-item-wrapper-details {
+          display: flex;
+          justify-content: space-around;
+          padding: 30px;
+          text-align: start;
+          border: 1px dashed #222222;
+          border-radius: 4px;
+          flex-wrap: wrap;
+          column-gap: 30px;
+          row-gap: 15px;
+          @media screen and (max-width: 576px) {
+            justify-content: flex-start;
+          }
+          @media screen and (max-width: 350px) {
+            justify-content: center;
+          }
+        // .thre-item-wrapper-details__item
+    
+        &__item {
+        }
+    
+        // .thre-item-wrapper-details__label
+    
+        &__label {
+          font-size: 14px;
+          margin-bottom: 5px;
+          color: $colorSilver;
+        }
+    
+        // .thre-item-wrapper-details__value
+    
+        &__value {
+        }
     }
+    .thre-item-wrapper-info {
+          padding: 30px;
+          border: 1px solid #222222;
+          border-radius: 4px;
+          text-align: start;
+          @media screen and (max-width: 576px) {
+            font-size: 14px;
+          }
+          
+    
+        // .thre-item-wrapper-info__name
+    
+        &__name {
+          margin-bottom: 30px;
+          text-transform: uppercase;
+        }
+    
+        // .thre-item-wrapper-info__labels
+    
+        &__labels {
+          display: flex;
+          justify-content: space-between;
+          text-transform: uppercase;
+          border-bottom: 1px solid #E4E4E4;
+          padding-bottom: 15px;
+          span{
+            display: block;
+          }
+        }
+    
+        // .thre-item-wrapper-info__wrapper
+    
+        &__wrapper {
+          display: flex;
+          flex-direction: column;
+          padding: 19px 0;
+          gap: 13px;
+          color: $colorSilver;
+          &:not(:last-child){
+            border-bottom: 1px solid #E4E4E4;
+          }
+          span {
+            text-transform: uppercase;
+            color: #000;
+          }
+        }
+    
+        // .thre-item-wrapper-info__item
+    
+        &__item {
+          display: grid;
+          grid-template-columns: 155px 1fr;
+          column-gap: 20px;
+        }
+    
+        // .thre-item-wrapper-info__label
+    
+        &__label {
+        }
+    
+        // .thre-item-wrapper-info__value
+    
+        &__value {
+          text-align: end;
+        }
+    }
+    &__btn{
+      display: block;
+      max-width: 240px;
+      padding: 20px 0;
+      margin: 0 auto;
+      text-align: center;
+      @media screen and (max-width: 576px) {
+        max-width: 100%;
+      }
+    }
+    }
+
+
+    
+    
 }
   // =================================
 }

@@ -309,10 +309,11 @@ function plusMinusGoodss() {
 
     plus.forEach(element => {
         element.addEventListener('click', function () {
+            
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
-            if (number.innerHTML > '0') {
+            if (+number.innerHTML > 1) {
                 minus.forEach(element => {
                     element.classList.remove('minus-active');
                 })
@@ -323,26 +324,29 @@ function plusMinusGoodss() {
             if (parentBlock.classList.contains('big-block-btn__wrapper-namber')) {
                 let card = parentBlock.parentNode.parentNode;
                 let remainderGoods = card.querySelector('.big-block__label').querySelector('span');
-                if (remainderGoods.innerHTML <= number.innerHTML) {
+                if (+remainderGoods.innerHTML <= +number.innerHTML) {
                     number.innerHTML = remainderGoods.innerHTML;
                     element.classList.add('plus-active');
 
                 }
 
             }
-
+            multiplyPriceQuantity();
         })
     })
 
     minus.forEach(element => {
         element.addEventListener('click', function () {
+            
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
+            console.log(typeof +number.innerHTML)
+
             number.innerHTML--
-            if (number.innerHTML < '2') {
+            if (+number.innerHTML < 2) {
                 this.classList.add('minus-active');
-                number.innerHTML = '1';
+                number.innerHTML = 1;
 
             }
 
@@ -357,7 +361,7 @@ function plusMinusGoodss() {
                 }
 
             }
-
+            multiplyPriceQuantity();
         })
     })
 };
@@ -398,9 +402,10 @@ if (document.body.classList.contains('product')) {
     })
 
     errorForm('.dont-miss-form');
-    errorForm('.basket-body-two-form');
+    // errorForm('.basket-body-two-form');
     tabBtnRadio();
     creatSlider();
+    multiplyPriceQuantity();
 }
 
 
@@ -414,13 +419,12 @@ function errorForm(addClass) {
             let input = form.querySelectorAll('.input');
             input.forEach(element => {
                 if (element.value === '') {
+                    element.focus();
                     element.classList.add('input-error');
                 } else {
                     element.classList.remove('input-error');
                 }
             })
-
-
         })
     }
 }
@@ -531,7 +535,7 @@ basketListItem.forEach(element => {
             removeClassRemovwItem();
             let activeItem = this.getAttribute('data-item-progres');
             let activeItemProgres = document.querySelector(`.basket__body_${activeItem}`);
-            activeItemProgres.classList.add('basket-body-active')
+            activeItemProgres.classList.add('basket-body-active');
         }
     })
 })
@@ -539,5 +543,46 @@ basketListItem.forEach(element => {
 function removeClassRemovwItem() {
     document.querySelectorAll('.basket__body').forEach(element => {
         element.classList.remove('basket-body-active');
+    })
+}
+
+
+let btnGoToOrdering = document.querySelector('.basket-order-block__btn');
+let barProgres = document.querySelector('.basket-list__progres span');
+let basketListItemTwo = document.querySelector('.basket-list__item_2');
+let basketListItemThre = document.querySelector('.basket-list__item_3');
+let basketBodyTwoForm = document.querySelector('.basket-body-two-form');
+
+console.log(basketBodyTwoForm)
+
+btnGoToOrdering.addEventListener('click', function() {
+    removeClassRemovwItem();
+    barProgres.style.width = '66.666%';
+    basketListItemTwo.classList.add('active-item');
+    document.querySelector('.basket__body_2').classList.add('basket-body-active');
+
+
+})
+
+
+    basketBodyTwoForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        removeClassRemovwItem();
+        barProgres.style.width = '100%';
+        basketListItemThre.classList.add('active-item');
+        document.querySelector('.basket__body_3').classList.add('basket-body-active');
+    });
+
+
+// Множимо ціну на кількість товару в корзині.
+function multiplyPriceQuantity() {
+    let blockPrice = document.querySelectorAll('.basket-body-one__money-block');
+    blockPrice.forEach(element => {
+        let price = element.querySelector('.block-price__price span').innerHTML;
+        let length = element.querySelector('.basket-body-one__wrapper-namber span').innerHTML;
+        let finalPrice = element.querySelector('.basket-body-one__final-price span');
+
+        console.log(price)
+        finalPrice.innerHTML = `${+(price) * +(length)}`;
     })
 }

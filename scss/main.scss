@@ -2306,6 +2306,7 @@ select {
         position: absolute;
         top: 50%;
         left: 0;
+        padding: 20px;
         font-size: 10px;
         transform: translateY(-50%) rotate(-180deg);
         &.not-active{
@@ -2317,7 +2318,7 @@ select {
       }
       .btn-right{
         transform: translateY(-40%);
-        left: calc(100% - 20px);
+        left: calc(100% - 50px);
       }
   
       // .basket-list__progres

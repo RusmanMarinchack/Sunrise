@@ -406,6 +406,7 @@ if (document.body.classList.contains('product')) {
     tabBtnRadio();
     creatSlider();
     multiplyPriceQuantity();
+    ordering()
 }
 
 
@@ -546,8 +547,13 @@ function removeClassRemovwItem() {
     })
 }
 
+// Прогресбар оформлення заказу в корзинні.
 
-let btnGoToOrdering = document.querySelector('.basket-order-block__btn');
+function ordering() {
+    let btnRight = document.querySelector('.btn-right');
+    let btnLeft = document.querySelector('.btn-left');
+    let basketProgresItemWrapper = document.querySelector('.basket-list__wrapper');
+    let btnGoToOrdering = document.querySelector('.basket-order-block__btn');
 let barProgres = document.querySelector('.basket-list__progres span');
 let basketListItemTwo = document.querySelector('.basket-list__item_2');
 let basketListItemThre = document.querySelector('.basket-list__item_3');
@@ -557,6 +563,8 @@ console.log(basketBodyTwoForm)
 
 btnGoToOrdering.addEventListener('click', function() {
     removeClassRemovwItem();
+    basketProgresItemWrapper.style.right = 'calc(-100vw + 10px)';
+    btnLeft.classList.remove('not-active');
     barProgres.style.width = '66.666%';
     basketListItemTwo.classList.add('active-item');
     document.querySelector('.basket__body_2').classList.add('basket-body-active');
@@ -564,14 +572,17 @@ btnGoToOrdering.addEventListener('click', function() {
 
 })
 
-
     basketBodyTwoForm.addEventListener('submit', function(e) {
         e.preventDefault();
         removeClassRemovwItem();
+        basketProgresItemWrapper.style.right = 'calc(0vw + 10px)';
+        btnRight.classList.add('not-active');
         barProgres.style.width = '100%';
         basketListItemThre.classList.add('active-item');
         document.querySelector('.basket__body_3').classList.add('basket-body-active');
     });
+}
+
 
 
 // Множимо ціну на кількість товару в корзині.

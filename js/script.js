@@ -39,8 +39,9 @@ new Swiper('.sales-leaders__slider', {
             spaceBetween: 20,
             slideToClickedSlide: true,
         },
-        1199: {
+        991: {
             slidesPerView: 3,
+            spaceBetween: 30,
             slideToClickedSlide: true,
         },
         1399: {
@@ -308,8 +309,9 @@ function plusMinusGoodss() {
     let minus = document.querySelectorAll('.minus');
 
     plus.forEach(element => {
-        element.addEventListener('click', function () {
-            
+        element.addEventListener('click', function (e) {
+            e.preventDefault()
+
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
@@ -336,8 +338,9 @@ function plusMinusGoodss() {
     })
 
     minus.forEach(element => {
-        element.addEventListener('click', function () {
-            
+        element.addEventListener('click', function (e) {
+            e.preventDefault()
+
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
@@ -402,6 +405,7 @@ if (document.body.classList.contains('product')) {
     })
 
     errorForm('.dont-miss-form');
+    errorForm('.add-comment-form');
     // errorForm('.basket-body-two-form');
     tabBtnRadio();
     creatSlider();
@@ -463,37 +467,44 @@ let basketProgresItem = document.querySelectorAll('.basket-list__item');
 let basketProgresItemLengrh = basketProgresItem.length;
 basketProgresItemLengrh = basketProgresItemLengrh - 1;
 
-if(basketProgresItemLengrh === (basketProgresItem.length - 1)){
-    btnLeft.classList.add('not-active');
+if(btnLeft || btnRight){
+    if(basketProgresItemLengrh === (basketProgresItem.length - 1)){
+        btnLeft.classList.add('not-active');
+    }
+
+    btnRight.addEventListener('click', function() {
+        basketProgresItemLengrh--
+        if(basketProgresItemLengrh <= '0'){
+            basketProgresItemLengrh = 0;
+            this.classList.add('not-active');
+        }
+    
+        if(basketProgresItemLengrh < (basketProgresItem.length - 1)) {
+            btnLeft.classList.remove('not-active');
+        }
+    
+        basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
+    })
+    
+    btnLeft.addEventListener('click', function() {
+        basketProgresItemLengrh++
+        if(basketProgresItemLengrh >= (basketProgresItem.length - 1)){
+            basketProgresItemLengrh = (basketProgresItem.length - 1);
+            this.classList.add('not-active');
+        } 
+    
+        if(basketProgresItemLengrh < (basketProgresItem.length - 1)) {
+            btnRight.classList.remove('not-active');
+        }
+    
+        if(basketProgresItemWrapper.style.right = 'calc(-100vw + 10px)'){
+            btnRight.classList.remove('not-active');
+        }
+    
+        basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
+    })
 }
 
-btnRight.addEventListener('click', function() {
-    basketProgresItemLengrh--
-    if(basketProgresItemLengrh <= '0'){
-        basketProgresItemLengrh = 0;
-        this.classList.add('not-active');
-    }
-
-    if(basketProgresItemLengrh < (basketProgresItem.length - 1)) {
-        btnLeft.classList.remove('not-active');
-    }
-
-    basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
-})
-
-btnLeft.addEventListener('click', function() {
-    basketProgresItemLengrh++
-    if(basketProgresItemLengrh >= (basketProgresItem.length - 1)){
-        basketProgresItemLengrh = (basketProgresItem.length - 1);
-        this.classList.add('not-active');
-    } 
-
-    if(basketProgresItemLengrh < (basketProgresItem.length - 1)) {
-        btnRight.classList.remove('not-active');
-    }
-
-    basketProgresItemWrapper.style.right = `calc(-${(basketProgresItemLengrh * 100)}vw + 10px)`;
-})
 }
 
 
@@ -559,19 +570,21 @@ let basketListItemTwo = document.querySelector('.basket-list__item_2');
 let basketListItemThre = document.querySelector('.basket-list__item_3');
 let basketBodyTwoForm = document.querySelector('.basket-body-two-form');
 
-console.log(basketBodyTwoForm)
+if(btnGoToOrdering){
+    btnGoToOrdering.addEventListener('click', function() {
+        removeClassRemovwItem();
+        basketProgresItemWrapper.style.right = 'calc(-100vw + 10px)';
+        btnLeft.classList.remove('not-active');
+        btnRight.classList.remove('not-active');
+        barProgres.style.width = '66.666%';
+        basketListItemTwo.classList.add('active-item');
+        document.querySelector('.basket__body_2').classList.add('basket-body-active');
+    
+    
+    })
+}
 
-btnGoToOrdering.addEventListener('click', function() {
-    removeClassRemovwItem();
-    basketProgresItemWrapper.style.right = 'calc(-100vw + 10px)';
-    btnLeft.classList.remove('not-active');
-    barProgres.style.width = '66.666%';
-    basketListItemTwo.classList.add('active-item');
-    document.querySelector('.basket__body_2').classList.add('basket-body-active');
-
-
-})
-
+if(basketBodyTwoForm){
     basketBodyTwoForm.addEventListener('submit', function(e) {
         e.preventDefault();
         removeClassRemovwItem();
@@ -581,6 +594,8 @@ btnGoToOrdering.addEventListener('click', function() {
         basketListItemThre.classList.add('active-item');
         document.querySelector('.basket__body_3').classList.add('basket-body-active');
     });
+}
+
 }
 
 
@@ -597,3 +612,39 @@ function multiplyPriceQuantity() {
         finalPrice.innerHTML = `${+(price) * +(length)}`;
     })
 }
+
+
+function addedProduct(){
+    let like = document.querySelectorAll('.like');
+
+like.forEach(element => {
+    element.addEventListener('click', function() {
+
+        if(this.classList.contains('_icon-like')){
+            this.classList.remove('_icon-like');
+            this.classList.add('_icon-added');
+        } else {
+            this.classList.add('_icon-like');
+            this.classList.remove('_icon-added');
+        }
+
+    }) 
+})
+}
+
+addedProduct();
+
+function starRating(){
+    let starsTtem = document.querySelectorAll('.stars__item');
+
+    if(starsTtem){
+        starsTtem.forEach(element => {
+            element.addEventListener('click', function() {
+                let starsList = element.parentNode;
+                console.log(starsList.dataset.dataStarsTotal)
+                starsList.dataset.starsTotal = element.dataset.starsItem;
+            })
+        })
+    }
+} 
+starRating();

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('fonts/icons.eot?ii7to2');
-  src:  url('../fonts/icons.eot?ii7to2#iefix') format('embedded-opentype'),
-    url('../fonts/icons.ttf?ii7to2') format('truetype'),
-    url('../fonts/icons.woff?ii7to2') format('woff'),
-    url('../fonts/icons.svg?ii7to2#icons') format('svg');
+  src:  url('fonts/icons.eot?np4uff');
+  src:  url('../fonts/icons.eot?np4uff#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?np4uff') format('truetype'),
+    url('../fonts/icons.woff?np4uff') format('woff'),
+    url('../fonts/icons.svg?np4uff#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,20 +25,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-sent .path1:before {
-  content: "\e909";
-  color: rgb(235, 112, 71);
-}
-._icon-sent .path2:before {
-  content: "\e90a";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-._icon-minus:before {
-  content: "\e907";
-}
-._icon-plus:before {
+._icon-facebook:before {
   content: "\e908";
+}
+._icon-pinterest:before {
+  content: "\e909";
+}
+._icon-twitter:before {
+  content: "\e90a";
+}
+._icon-added:before {
+  content: "\e907";
 }
 ._icon-delivery-1:before {
   content: "\e905";

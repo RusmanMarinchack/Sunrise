@@ -245,20 +245,24 @@ function changes(screen) {
 
 function goToTheTop() {
     let btnStart = document.querySelector('.footer__btn-start');
-    document.addEventListener('scroll', function () {
-        if (window.scrollY >= 200) {
-            btnStart.classList.add('btn-start-active');
-        } else {
-            btnStart.classList.remove('btn-start-active');
-        }
-    })
 
-    btnStart.addEventListener('click', function () {
-        window.scrollBy({
-            top: -window.scrollY,
-            behavior: 'smooth'
+    if(btnStart){
+        document.addEventListener('scroll', function () {
+            if (window.scrollY >= 200) {
+                btnStart.classList.add('btn-start-active');
+            } else {
+                btnStart.classList.remove('btn-start-active');
+            }
         })
-    })
+    
+        btnStart.addEventListener('click', function () {
+            window.scrollBy({
+                top: -window.scrollY,
+                behavior: 'smooth'
+            })
+        })
+    }
+
 }
 goToTheTop();
 
@@ -461,7 +465,7 @@ function removeClassActiveImg() {
 
 
 function creatSlider() {
-    let btnRight = document.querySelector('.btn-right');
+let btnRight = document.querySelector('.btn-right');
 let btnLeft = document.querySelector('.btn-left');
 let basketProgresItemWrapper = document.querySelector('.basket-list__wrapper');
 let basketProgresItem = document.querySelectorAll('.basket-list__item');
@@ -666,7 +670,7 @@ function accordion() {
 
                 if(this.classList.contains('accordion-active') && bodyAccordion.classList.contains('accordion-active')){
                     this.querySelector('span').innerHTML = '&#8722';
-                    bodyAccordion.style.height = `${(bodyAccordion.scrollHeight + 30)}px`;
+                    bodyAccordion.style.height = `${(bodyAccordion.scrollHeight + 60)}px`;
                 } else {
                     this.querySelector('span').innerHTML = '&#43;';
                     bodyAccordion.style.height = `0`;
@@ -676,3 +680,20 @@ function accordion() {
     })
 }
 accordion();
+
+function errorBlockHeight() {
+    let blockError = document.querySelector('.main__error');
+
+    if(blockError) {
+        let header = document.querySelector('.header');
+        console.log(header.clientHeight)
+        
+        if(window.innerWidth <= 576){
+            blockError.style.height = `100vh`;
+        } 
+        else {
+            blockError.style.height = `calc(100vh - ${header.clientHeight}px)`;
+        }
+    }
+}
+errorBlockHeight();

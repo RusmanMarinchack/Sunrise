@@ -294,6 +294,10 @@ body.product .header .header-content .block-catalog .catalog-sub-menu {
   height: 100%;
 }
 
+body.error {
+  overflow: hidden;
+}
+
 select {
   background: transparent;
 }
@@ -4904,6 +4908,55 @@ select {
 
 .main .question .question-wrapper .item-accordions__body.accordion-active {
   padding: 30px 0;
+}
+
+.main .error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: auto;
+}
+
+.main .error__container {
+  max-width: 450px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.main .error__container p {
+  display: block;
+  font-weight: 900;
+  font-size: 90px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 992px) {
+  .main .error__container p {
+    font-size: 40px;
+  }
+}
+
+.main .error__title {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.main .error__text {
+  margin-bottom: 30px;
+}
+
+.main .error__btn {
+  display: block;
 }
 
 .footer .footer-info {

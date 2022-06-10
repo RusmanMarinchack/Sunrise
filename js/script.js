@@ -406,6 +406,7 @@ if (document.body.classList.contains('product')) {
 
     errorForm('.dont-miss-form');
     errorForm('.add-comment-form');
+    errorForm('.contat-form');
     // errorForm('.basket-body-two-form');
     tabBtnRadio();
     creatSlider();
@@ -648,3 +649,30 @@ function starRating(){
     }
 } 
 starRating();
+
+
+// Робимо аккордеон для сторінуи question.
+function accordion() {
+    let headerAccordion = document.querySelectorAll('.item-accordions__header');
+
+    headerAccordion.forEach(element => {
+        if(element){
+            element.addEventListener('click', function() {
+                let bodyAccordion = this.nextElementSibling;
+                this.classList.toggle('accordion-active');
+                bodyAccordion.classList.toggle('accordion-active');
+                console.log(bodyAccordion.scrollHeight)
+                // bodyAccordion.style.heigth = `${bodyAccordion.scrollHeigth}px`;
+
+                if(this.classList.contains('accordion-active') && bodyAccordion.classList.contains('accordion-active')){
+                    this.querySelector('span').innerHTML = '&#8722';
+                    bodyAccordion.style.height = `${(bodyAccordion.scrollHeight + 30)}px`;
+                } else {
+                    this.querySelector('span').innerHTML = '&#43;';
+                    bodyAccordion.style.height = `0`;
+                }
+            }) 
+        }
+    })
+}
+accordion();

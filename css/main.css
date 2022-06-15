@@ -2796,7 +2796,7 @@ select {
   max-width: 800px;
   width: 100%;
   max-height: 800px;
-  height: calc(100vh - 20px);
+  height: calc(100vh - 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

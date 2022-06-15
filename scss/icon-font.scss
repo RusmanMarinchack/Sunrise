@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('fonts/icons.eot?np4uff');
-  src:  url('../fonts/icons.eot?np4uff#iefix') format('embedded-opentype'),
-    url('../fonts/icons.ttf?np4uff') format('truetype'),
-    url('../fonts/icons.woff?np4uff') format('woff'),
-    url('../fonts/icons.svg?np4uff#icons') format('svg');
+  src:  url('fonts/icons.eot?iyp5zu');
+  src:  url('../fonts/icons.eot?iyp5zu#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?iyp5zu') format('truetype'),
+    url('../fonts/icons.woff?iyp5zu') format('woff'),
+    url('../fonts/icons.svg?iyp5zu#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-filter:before {
+  content: "\e90b";
+}
 ._icon-facebook:before {
   content: "\e908";
 }

@@ -52,6 +52,37 @@ new Swiper('.sales-leaders__slider', {
     }
 });
 
+function noUiSliderFun(){
+    let slider = document.querySelector('.catalog-filter-accardion__slider');
+if(slider){
+    let minPrice = document.querySelector('.catalog-filter-accardion__min-price');
+    let maxPrice = document.querySelector('.catalog-filter-accardion__max-price');
+    noUiSlider.create(slider, {
+        start: [Number(minPrice.getAttribute('data-min-price')), Number(maxPrice.getAttribute('data-max-price'))],
+        connect: true,
+        range: {
+            'min': Number(minPrice.getAttribute('data-min-price')),
+            'max': Number(maxPrice.getAttribute('data-max-price'))
+        }
+    });
+
+
+    let skipValues = [
+        document.getElementById('skip-value-lower'),
+        document.getElementById('skip-value-upper')
+    ];
+    
+    slider.noUiSlider.on('update', function (values, handle) {
+        skipValues[handle].innerHTML = (Math.trunc(values[handle]));
+    });
+}
+}
+
+noUiSliderFun()
+
+
+
+
 // Перевірка на знаходження на головній сторінці.
 if (document.body.classList.contains('home')) {
     let activeSlider = document.querySelector('.tab-body-item-two__swiper');
@@ -348,7 +379,6 @@ function plusMinusGoodss() {
             let parentBlock = this.parentNode;
             let number = parentBlock.querySelector('span');
 
-            console.log(typeof +number.innerHTML)
 
             number.innerHTML--
             if (+number.innerHTML < 2) {
@@ -378,11 +408,13 @@ plusMinusGoodss();
 
 // Product card
 if (document.body.classList.contains('product')) {
-    toReceive();
-    errorForm('.product-options__form');
 
     let headerContentShadow = document.querySelector('.header-content__shadow');
     let blockCatalog = document.querySelector('.block-catalog__wrapper');
+
+    let popupShadow = document.querySelector('.popup__shadow');
+    let popup = document.querySelector('.popup__body');
+
     document.addEventListener('click', function (e) {
         console.log(e.target.classList)
 
@@ -405,9 +437,48 @@ if (document.body.classList.contains('product')) {
             errorForm('.product-options-form');
         }
 
+        // Попап (Як зроби замір рулонних штор).
+        if (e.target.classList[1] === 'button'){
+
+            document.body.classList.add('lock-popup');
+            document.firstElementChild.classList.add('lock-popup');
+            popupShadow.classList.add('popup-active');
+            popup.classList.add('popup-active');
+
+        }
+        if (e.target.classList[0] === 'popup__btn' || e.target.classList[0] === 'popup__shadow'){
+            document.body.classList.remove('lock-popup');
+            document.firstElementChild.classList.remove('lock-popup');
+            popupShadow.classList.remove('popup-active');
+            popup.classList.remove('popup-active');
+        }
+
+        if(e.target.classList[1] === 'btn-sorting' || e.target.classList[0] === '_icon-right'){
+            document.querySelector('.catalog-header-sublist').classList.toggle('active-sublist');
+            document.querySelector('.btn-sorting span').classList.toggle('oreng');
+        } else {
+            if(document.querySelector('.catalog-header-sublist')){
+                document.querySelector('.catalog-header-sublist').classList.remove('active-sublist');
+                document.querySelector('.btn-sorting span').classList.remove('oreng');
+            }
+
+        }
+        
+        // Клік на кнопку фільтер в мобільній версії на сторінці catalog.
+        let innerFilter = document.querySelector('.page-catalog__inner');
+
+        if(e.target.classList[1] === 'btn-filter' || e.target.classList[0] === '_icon-filter'){
+            innerFilter.classList.add('active-inner');
+        }
+        if(e.target.classList[0] === 'catalog-block-title__btn'){
+            innerFilter.classList.remove('active-inner');
+        }
 
     })
 
+
+    toReceive();
+    errorForm('.product-options__form');
     errorForm('.dont-miss-form');
     errorForm('.add-comment-form');
     errorForm('.contat-form');
@@ -417,7 +488,6 @@ if (document.body.classList.contains('product')) {
     multiplyPriceQuantity();
     ordering()
 }
-
 
 // Перевірка форми чи не пустий інпут і виводимо ошибку.
 function errorForm(addClass) {
@@ -443,7 +513,7 @@ function errorForm(addClass) {
 
 
 
-// Получаємо src фото в блоці product-description__imegs-list
+// Получаємо src фото в блоці product-description__imegs-list.
 function toReceive() {
     let productImegs = document.querySelectorAll('.product-description__img');
     let productBigImg = document.querySelector('.product-description__big-img');
@@ -451,7 +521,6 @@ function toReceive() {
         element.addEventListener('click', function () {
             removeClassActiveImg();
             this.parentNode.classList.add('img-active');
-            console.log(this.parentNode)
             productBigImg.innerHTML = `<img src="${this.getAttribute('src')}" alt="Product" />`;
         })
     })
@@ -613,7 +682,6 @@ function multiplyPriceQuantity() {
         let length = element.querySelector('.basket-body-one__wrapper-namber span').innerHTML;
         let finalPrice = element.querySelector('.basket-body-one__final-price span');
 
-        console.log(price)
         finalPrice.innerHTML = `${+(price) * +(length)}`;
     })
 }
@@ -646,7 +714,6 @@ function starRating(){
         starsTtem.forEach(element => {
             element.addEventListener('click', function() {
                 let starsList = element.parentNode;
-                console.log(starsList.dataset.dataStarsTotal)
                 starsList.dataset.starsTotal = element.dataset.starsItem;
             })
         })
@@ -656,7 +723,7 @@ starRating();
 
 
 // Робимо аккордеон для сторінуи question.
-function accordion() {
+function accordionQuestion() {
     let headerAccordion = document.querySelectorAll('.item-accordions__header');
 
     headerAccordion.forEach(element => {
@@ -665,7 +732,6 @@ function accordion() {
                 let bodyAccordion = this.nextElementSibling;
                 this.classList.toggle('accordion-active');
                 bodyAccordion.classList.toggle('accordion-active');
-                console.log(bodyAccordion.scrollHeight)
                 // bodyAccordion.style.heigth = `${bodyAccordion.scrollHeigth}px`;
 
                 if(this.classList.contains('accordion-active') && bodyAccordion.classList.contains('accordion-active')){
@@ -679,14 +745,35 @@ function accordion() {
         }
     })
 }
-accordion();
+accordionQuestion();
+
+// Робимо аккордеон для сторінці Catalog.
+function accrdionCatalogFilter() {
+    let headerAcardion = document.querySelectorAll('.catalog-filter-accardion__header');
+
+    headerAcardion.forEach(element => {
+        if(element){
+            element.addEventListener('click', function() {
+                this.classList.toggle('accordion-active');
+                this.classList.toggle('oreng');
+                this.nextElementSibling.classList.toggle('accordion-active');
+
+                if(this.classList.contains('accordion-active') && this.nextElementSibling.classList.contains('accordion-active')){
+                    this.nextElementSibling.style.height = `${(this.nextElementSibling.scrollHeight + 11)}px`;
+                } else {
+                    this.nextElementSibling.style.height = `0px`;
+                }
+            })
+        }
+    })
+}
+accrdionCatalogFilter();
 
 function errorBlockHeight() {
     let blockError = document.querySelector('.main__error');
 
     if(blockError) {
         let header = document.querySelector('.header');
-        console.log(header.clientHeight)
         
         if(window.innerWidth <= 576){
             blockError.style.height = `100vh`;

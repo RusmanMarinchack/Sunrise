@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/svg/logo.svg" />
+    <title>Кошик</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/icon-font.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="product">
+
+    <header class="header">
+      <div class="header__top header-top">
+        <div class="header-top__container _container">
+          <nav class="header-top__nav nav">
+            <div class="nav__wrapper">
+              <div class="nav__burger">
+                <span class="nav__burger-span"></span>
+              </div>
+            </div>
+            <div class="nav__wrapper-burger">
+              <form
+                action="#"
+                class="header-wrapper__search-block header-search-block"
+              >
+                <input
+                  type="text"
+                  class="header-search-block__input"
+                  placeholder="Пошук..."
+                />
+                <div class="header-search-block__wrapper">
+                  <select name="select" class="header-search-block__select">
+                    <option value="all categories">Всі категорії</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <button
+                    class="header-search-block__btn _icon-search"
+                  ></button>
+                </div>
+              </form>
+              <div class="nav__manu-wrapper">
+                <ul class="nav__manu">
+                  <li class="nav__link-catalog nav__item item-noactive">
+                    <a href="#" class="nav__link _icon-right">Каталог</a>
+                  </li>
+                  <li class="nav__item item-noactive">
+                    <a href="#" class="nav__link">Послуги компанії</a>
+                  </li>
+                  <li class="nav__item item-noactive">
+                    <a href="#" class="nav__link">Дилерам</a>
+                  </li>
+                  <li class="nav__item item-noactive">
+                    <a href="#" class="nav__link">Про нас</a>
+                  </li>
+
+                  <li class="nav__item item-noactive">
+                    <a href="#" class="nav__link">Контакти</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Оплата и доставка</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Гарантія</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Блог</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-wrapper__worck">
+                <span>Режим роботи:</span>
+                <div class="header-wrapper__worck-text">
+                  Пн-Пт: 08:00 – 20:00 / Сб: 10:00 - 18:00
+                </div>
+              </div>
+              <div class="header-wrapper__worck">
+                <span>Адреса:</span>
+                <a href="#">Чернівці, вул. Небесної сотні, 23</a>
+              </div>
+              <select name="multilingual" class="header-top__select">
+                <option value="UKR">Укр</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+          </nav>
+          <a href="./index.html"
+            ><img
+              src="./img/svg/logo-mob.svg"
+              alt="Logo"
+              class="header-top__logo"
+          /></a>
+          <ul class="header-wrapper__list">
+            <li class="header-wrapper__item">
+              <a href="#" class="header-wrapper__link _icon-like"></a>
+            </li>
+            <li class="header-wrapper__item">
+              <a href="#" class="header-wrapper__link _icon-basket"
+                ><span>3</span></a
+              >
+            </li>
+          </ul>
+          <select name="multilingual" class="header-top__select">
+            <option value="UKR">Укр</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="header__wrapper header-wrapper">
+        <div class="header-wrapper__container _container">
+          <a href="./index.html" class="header-wrapper__logo">
+            <img src="./img/svg/logo.svg" alt="Logo" />
+          </a>
+          <div class="header-wrapper__worck">
+            <span>Режим роботи:</span>
+            <div class="header-wrapper__worck-text">
+              Пн-Пт: 08:00 – 20:00 / Сб: 10:00 - 18:00
+            </div>
+          </div>
+          <div class="header-wrapper__worck">
+            <span>Адреса:</span>
+            <a href="#">Чернівці, вул. Небесної сотні, 23</a>
+          </div>
+          <form
+            action="#"
+            class="header-wrapper__search-block header-search-block"
+          >
+            <input
+              type="text"
+              class="header-search-block__input"
+              placeholder="Пошук..."
+            />
+            <div class="header-search-block__wrapper">
+              <select name="select" class="header-search-block__select">
+                <option value="all categories">Всі категорії</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <button class="header-search-block__btn _icon-search"></button>
+            </div>
+          </form>
+          <ul class="header-wrapper__list">
+            <li class="header-wrapper__item">
+              <a href="#" class="header-wrapper__link _icon-like"></a>
+            </li>
+            <li class="header-wrapper__item">
+              <a href="#" class="header-wrapper__link _icon-basket"
+                ><span>3</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header__content header-content">
+        <div class="header-content__shadow"></div>
+        <div class="header-content__container _container">
+          <div class="header-content__block-catalog block-catalog">
+            <div class="block-catalog__text">
+              <span class="_icon-left"></span>Каталог
+            </div>
+            <div class="block-catalog__wrapper">
+              <ul class="block-catalog__menu">
+                <li class="block-catalog__item _icon-right" data-sub-menu="1">
+                  Тканинні ролети
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="2">
+                  Ролети День-Ніч
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="3">
+                  Горизонтальні жалюзі
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="4">
+                  Вертикальні жалюзі
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="5">
+                  Жалюзі Плісе
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="6">
+                  Римські штори
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="7">
+                  Мансардні ролети
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="8">
+                  Рефлексолі
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="9">
+                  Рафштори
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="10">
+                  Маркізи
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="11">
+                  Перголи
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="12">
+                  Захисні ролети
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="13">
+                  Ворота секційні
+                </li>
+                <li class="block-catalog__item _icon-right" data-sub-menu="14">
+                  Москітні сітки
+                </li>
+              </ul>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_1"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Тканинні ролети
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_2"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Ролети День-Ніч
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_3"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Горизонтальні жалюзі
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_4"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Вертикальні жалюзі
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_5"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Жалюзі Плісе
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_6"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Римські штори
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_7"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Мансардні ролети
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">LEN T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BERLIN T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">ROYAL</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">LINEN LOOK</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BERLIN</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">PEARL</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">RIMINI ICE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">MIRACLE T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">LUMINIS Т</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">A MAXI</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >LUMINIS 201-251</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >LUMINIS 901-936</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >UMBRA B.O. T</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BOSTON B.O.</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >MIRACLE B.O.</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">UMBRA B.O.</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >LINEN LOOK B.O.</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">FLAX B.O.</a>
+                    </li>
+                  </ul>
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >SPIRIT D.O. ***</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >MILA B.O.***</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >MUENCHEN B.O.</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SCREEN</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">JUNGLE В.О.</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">PRISMA В.О.</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">THERMO B.O.</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">AQUA PERL</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">AQUA BREEZE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SHARM B.O.</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"
+                        >SCREEN REFLECT</a
+                      >
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">FLAX T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">JUTE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">NATURAL</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">ARUBA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">CALCUTTA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">WODA Т </a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">LAZUR T</a>
+                    </li>
+                  </ul>
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">GRASS T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">GRASS T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">LACE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">WODA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SEA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BAMBOO</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">GRASS</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">EMIR T</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SALUT</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">KLEVER</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">VERBENA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">CAMILLA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">WIND</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">ABRIS</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">PING-PONG</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">EMIR</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">EDEN</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SOFI</a>
+                    </li>
+                  </ul>
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BAROCCO***</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">FROST</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BATIK</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">CHAMPAGNE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BRIAR</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">FENNEL</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">LOTOS</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">BUBBLE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">VIOLA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">PALOMA</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">PARK</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">ROSE</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SHARM</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">SUN</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">GLOSS</a>
+                    </li>
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link">MAGNOLIA</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_8"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Рефлексолі
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_9"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Рафштори
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_10"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Маркізи
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_11"
+              >
+                <div class="catalog-sub-menu__title">Перголи</div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_12"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Захисні ролети
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_13"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Ворота секційні
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="block-catalog__sub-menu catalog-sub-menu catalog-sub-menu_14"
+              >
+                <div class="catalog-sub-menu__title">
+                  <span class="_icon-left"></span>Москітні сітки
+                </div>
+                <div class="catalog-sub-menu__wrapper">
+                  <ul class="catalog-sub-menu__column">
+                    <li class="catalog-sub-menu__item">
+                      <a href="#" class="catalog-sub-menu__link"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-content__block-body block-body">
+            <div class="block-body__wrapper">
+              <ul class="block-body__menu">
+                <li class="block-body__item">
+                  <a href="#" class="block-body__link">Послуги компанії</a>
+                </li>
+                <li class="block-body__item">
+                  <a href="#" class="block-body__link">Дилерам</a>
+                </li>
+                <li class="block-body__item">
+                  <a href="#" class="block-body__link">Про нас</a>
+                </li>
+                <li class="block-body__item">
+                  <a href="#" class="block-body__link">Контакти</a>
+                </li>
+              </ul>
+              <ul class="block-body__contact-list">
+                <li class="block-body__item">
+                  <a
+                    href="viber://chat?number=%2B380983772595"
+                    class="block-body__link link-phone"
+                    ><img src="./img/svg/viber.svg" alt="Viber phone" />+38
+                    (098) 37-72-595</a
+                  >
+                </li>
+                <li class="block-body__item">
+                  <a
+                    href="tg://resolve?domain=username"
+                    class="block-body__link link-phone"
+                    ><img
+                      src="./img/svg/telegram.svg"
+                      alt="Telegram phone"
+                    />+38 (098) 37-72-595</a
+                  >
+                </li>
+                <li class="block-body__item">
+                  <a
+                    href="tel:+3809837-72-595"
+                    class="block-body__link phone link-phone"
+                    >+38 (098) 37-72-595</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+        <section class="main__basket basket">
+            <div class="basket__container _container">
+                <h2 class="basket__title title">Кошик</h2>
+
+                <div class="basket__list basket-list">
+                  <div class="basket-list__wrapper">
+                    <div class="basket-list__item basket-list__item_1 active-item" data-item-progres="1">
+                        <div class="basket-list__name"><span>01</span> Корзина для покупок</div>
+                        <div class="basket-list__text">Управляйте своїм списком товарів</div>
+                    </div>
+                    <div class="basket-list__item basket-list__item_2" data-item-progres="2">
+                        <div class="basket-list__name"><span>02</span>Доставка та оформлення</div>
+                        <div class="basket-list__text">Перевірьте свій список товарів</div>
+                    </div>
+                    <div class="basket-list__item basket-list__item_3" data-item-progres="3">
+                        <div class="basket-list__name"><span>03</span> Підтвердження</div>
+                        <div class="basket-list__text">Перегляньте та відправте своє замовлення</div>
+                    </div>
+
+                  </div>
+                  <div class="basket-list__btn btn-right _icon-right"></div>
+                  <div class="basket-list__btn btn-left _icon-right"></div>
+                    <div class="basket-list__progres">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="basket__wrapper">
+                    <div class="basket__body basket__body_1 basket-body-one basket-body-active">
+                        <div class="basket-body-one__list">
+                            <div class="basket-body-one__labels basket-body-one-labels">
+                                <div class="basket-body-one-labels__label">Товар</div>
+                                <div class="basket-body-one-labels__label label-price">Ціна</div>
+                                <div class="basket-body-one-labels__label label-length">Кількість</div>
+                                <div class="basket-body-one-labels__label label-order">Загальна вартість</div>
+                            </div>
+                            <div class="basket-body-one__wraper">
+                                <div class="basket-body-one__main">
+                                    <div class="basket-body-one__characteristics basket-body-one-characteristics">
+                                        <img class="basket-body-one-characteristics__img" src="./img/curtains/6.png" alt="Ролети день-ніч Secret Cвітло-коричневий">
+                                        <div class="basket-body-one-characteristics__wrapper characteristics-wrapper">
+                                            <div class="characteristics-wrappe__name">Ролети день-ніч Secret Cвітло-коричневий</div>
+                                            <div class="characteristics-wrappe__info">Ширина:  200</div>
+                                            <div class="characteristics-wrappe__info">Висота: 350</div>
+                                            <div class="characteristics-wrappe__info">Тип системи: відкрита</div>
+                                            <div class="characteristics-wrappe__info">Управління системою: ліворуч</div>
+                                            <div class="characteristics-wrappe__info">Колір: коричневий</div>
+                                        </div>
+                                    </div>
+                                    <div class="basket-body-one__money-block">
+                                    <div class="basket-body-one__block-price block-price">
+                                        <span class="block-price__price"><span>599</span> грн</span>
+                                        <span class="block-price__old-price"
+                                          >649 грн</span
+                                        >
+                                      </div>
+                                      <div class="basket-body-one__wrapper-namber wrapper-namber">
+                                        <button class="wrapper-namber__minus minus">-</button>
+                                        <span class="wrapper-namber__namber">2</span>
+                                        <button class="wrapper-namber__plus plus">+</button>
+                                      </div>
+                                      <div class="basket-body-one__final-price"><span>1198</span> грн</div>
+                                      </div>
+                                      <button class="basket-body-one__btn-remove">&#x2715;</button>
+                                </div>
+                                <div class="basket-body-one__main">
+                                    <div class="basket-body-one__characteristics basket-body-one-characteristics">
+                                        <img class="basket-body-one-characteristics__img" src="./img/curtains/1.png" alt="Ролети день-ніч Secret Cвітло-коричневий">
+                                        <div class="basket-body-one-characteristics__wrapper characteristics-wrapper">
+                                            <div class="characteristics-wrappe__name">Ролети день-ніч Secret Cвітло-коричневий</div>
+                                            <div class="characteristics-wrappe__info">Ширина:  200</div>
+                                            <div class="characteristics-wrappe__info">Висота: 350</div>
+                                            <div class="characteristics-wrappe__info">Тип системи: відкрита</div>
+                                            <div class="characteristics-wrappe__info">Управління системою: ліворуч</div>
+                                            <div class="characteristics-wrappe__info">Колір: коричневий</div>
+                                        </div>
+                                    </div>
+                                    <div class="basket-body-one__money-block">
+                                    <div class="basket-body-one__block-price block-price">
+                                        <span class="block-price__price"><span>879</span> грн</span>
+                                        <span class="block-price__old-price"
+                                          >649 грн</span
+                                        >
+                                      </div>
+                                      <div class="basket-body-one__wrapper-namber wrapper-namber">
+                                        <button class="wrapper-namber__minus minus">-</button>
+                                        <span class="wrapper-namber__namber">1</span>
+                                        <button class="wrapper-namber__plus plus">+</button>
+                                      </div>
+                                      <div class="basket-body-one__final-price"><span>1198</span> грн</div>
+                                    </div>
+                                      <button class="basket-body-one__btn-remove">&#x2715;</button>
+                                </div>
+                                <div class="basket-body-one__main">
+                                    <div class="basket-body-one__characteristics basket-body-one-characteristics">
+                                        <img class="basket-body-one-characteristics__img" src="./img/curtains/2.png" alt="Ролети день-ніч Secret Cвітло-коричневий">
+                                        <div class="basket-body-one-characteristics__wrapper characteristics-wrapper">
+                                            <div class="characteristics-wrappe__name">Ролети день-ніч Secret Cвітло-коричневий</div>
+                                            <div class="characteristics-wrappe__info">Ширина:  200</div>
+                                            <div class="characteristics-wrappe__info">Висота: 350</div>
+                                            <div class="characteristics-wrappe__info">Тип системи: відкрита</div>
+                                            <div class="characteristics-wrappe__info">Управління системою: ліворуч</div>
+                                            <div class="characteristics-wrappe__info">Колір: коричневий</div>
+                                        </div>
+                                    </div>
+                                    <div class="basket-body-one__money-block">
+                                    <div class="basket-body-one__block-price block-price">
+                                        <span class="block-price__price"><span>1099</span> грн</span>
+                                        <span class="block-price__old-price"
+                                          >1399 грн</span
+                                        >
+                                      </div>
+                                      <div class="basket-body-one__wrapper-namber wrapper-namber">
+                                        <button class="wrapper-namber__minus minus">-</button>
+                                        <span class="wrapper-namber__namber">3</span>
+                                        <button class="wrapper-namber__plus plus">+</button>
+                                      </div>
+                                      <div class="basket-body-one__final-price"><span>1198</span> грн</div>
+                                    </div>
+                                      <button class="basket-body-one__btn-remove">&#x2715;</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="basket-body-one__order-block basket-order-block">
+                            <div class="basket-order-block__wrapper">
+                                <h2 class="basket-order-block__title">Ваше замовлення</h2>
+                                <div class="basket-order-block__list">
+                                    <div class="basket-order-block__item">
+                                        <div class="basket-order-block__label">Товари:</div>
+                                        <div class="basket-order-block__value"><span>4975</span> грн</div>
+                                    </div>
+                                    <div class="basket-order-block__item">
+                                        <div class="basket-order-block__label">Знижка:</div>
+                                        <div class="basket-order-block__value"><span>4975</span> грн</div>
+                                    </div>
+                                </div>
+                                <div class="basket-order-block__price basket-final-price">
+                                    <div class="basket-final-price__label">Всього:</div>
+                                    <div class="basket-final-price__value">5374 грн</div>
+                                </div>
+                            </div>
+                            <button class="basket-order-block__btn btn">Перейти до оформлення замовлення </button>
+                        </div>
+                    </div>
+                    <div class="basket__body basket__body_2 basket-body-two">
+                      <div class="basket-body-two__block-form">
+                        <form action="#" class="basket-body-two__form basket-body-two-form">
+                          <div class="basket-body-two-form__main">
+                            <div class="basket-body-two-form__title">Контактні дані</div>
+                            <div class="basket-body-two-form__item two-form-item">
+                              <div class="two-form-item__wrapper">
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-name">Ім’я</label>
+                                  <input type="text" class="two-form-item__input basket-two-name input" id="basket-two-name">
+                                </div>
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-surname">Прізвище</label>
+                                  <input type="text" class="two-form-item__input basket-two-surname input" id="basket-two-surname">
+                                </div>
+                              </div>
+                              <div class="two-form-item__wrapper">
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-phone">Номер телефону</label>
+                                  <input type="number" class="two-form-item__input basket-two-phone input" id="basket-two-phone">
+                                </div>
+                                <div class="two-form-item__item">
+                                  <label for="basket-two-email">Е-мейл</label>
+                                  <input type="email" class="two-form-item__input basket-two-email input" id="basket-two-email">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="basket-body-two-form__title">Спосіб доставки</div>
+                            <div class="basket-body-two-form__item two-form-item">
+                              <div class="two-form-item__main form-main-two">
+                                <div class="basket-body-two-form__tabs form-tabs">
+                                  <div class="form-tabs__tab">
+                                    <input checked type="radio" class="form-tabs__radio" id="form-tabs-radio-1" data-item-form="1" name="input">  
+                                    <label for="form-tabs-radio-1" class="form-tabs-radio">Самовивіз</label>
+                                  </div>
+                                  <div class="form-tabs__tab">
+                                    <input type="radio" class="form-tabs__radio" id="form-tabs-radio-2" data-item-form="2" name="input">
+                                    <label for="form-tabs-radio-2" class="form-tabs-radio">Доставка в Чернівцях</label>
+                                  </div>
+                                  <div class="form-tabs__tab">
+                                    <input type="radio" class="form-tabs__radio" id="form-tabs-radio-3" data-item-form="3" name="input">
+                                    <label for="form-tabs-radio-3" class="form-tabs-radio">Нова Пошта</label>
+                                  </div>
+                                  <div class="form-tabs__tab block-checkbox">
+                                    <input type="checkbox" class="form-tabs__radio" id="form-tabs-checkbox" name="input-chekbox">
+                                    <label for="form-tabs-checkbox" class="form-tabs-radio form-tabs-checkbox">Доставка кур’єром</label>
+                                  </div>
+                                </div>
+                                <div class="basket-body-two-form__tab-body_1 tab-body tab-body-active">
+                                  <div class="tab-body__item">
+                                    <input type="text" class="tab-body__input basket-two-city input" id="basket-two-city">
+                                    <label for="basket-two-city">Місто</label>
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Адреса</label>
+                                    <input type="text" class="tab-body__input basket-two-addres input" id="basket-two-addres">
+                                  </div>
+                                </div>
+                                <div class="basket-body-two-form__tab-body_2 tab-body">
+                                  <div class="tab-body__item">
+                                    <input type="text" class="tab-body__input basket-two-city-two input" id="basket-two-city-two">
+                                    <label for="basket-two-city">Місто</label>
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Вулиця</label>
+                                    <input type="text" class="tab-body__input basket-two-street input" id="basket-two-street">
+                                  </div>
+                                </div>
+                                <div class="basket-body-two-form__tab-body_3 tab-body">
+                                  <div class="tab-body__item">
+                                    <input type="text" class="tab-body__input input" id="basket-two-city">
+                                    <label for="basket-two-city">Область</label>
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Місто</label>
+                                    <input type="text" class="tab-body__input input" id="basket-two-addres">
+                                  </div>
+                                  <div class="tab-body__item">
+                                    <label for="basket-two-addres">Відділення Нової Пошти</label>
+                                    <input type="text" class="tab-body__input input" id="basket-two-addres">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="basket-body-two-form__title">Спосіб Оплати</div>
+                            <div class="basket-body-two-form__item two-form-item">
+                              <div class="two-form-item__wrapper">
+                              <div class="two-form-item__block">
+                                <div class="form-tabs__tab">
+                                  <input checked type="radio" class="form-tabs__radio" id="form-tabs-radio-4" name="payment">  
+                                  <label for="form-tabs-radio-4" class="form-tabs-radio">Оплата при отриманні</label>
+                                </div>
+                                <div class="form-tabs__tab">
+                                  <input type="radio" class="form-tabs__radio" id="form-tabs-radio-5" name="payment">  
+                                  <label for="form-tabs-radio-5" class="form-tabs-radio">Безготівковий розрахунок</label>
+                                </div>
+                              </div>
+                              <div class="two-form-item__block-textarea">
+                                <textarea name="block-textarea" id="block-textarea"></textarea>
+                                <label for="block-textarea">Коментар</label>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="basket-body-two-form__order two-form-order">
+                            <div class="two-form-order__wrapper">
+                              <h2 class="two-form-order__title">Ваше замволення</h2>
+                              <div class="two-form-order__labels">
+                                <span>Товар</span>
+                                <span>Ціна</span>
+                              </div>
+                              <div class="two-form-order__body two-form-order-body">
+                                <div class="two-form-order-body__label">Ролети день-ніч Secret Cвітло-коричневий x2</div>
+                                <div class="two-form-order-body__value">1198 грн</div>
+                                <div class="two-form-order-body__label">Ролети Elite Special Edit сірі</div>
+                                <div class="two-form-order-body__value">879 грн</div>
+                                <div class="two-form-order-body__label">Ролети Premium сірі 2021 x3</div>
+                                <div class="two-form-order-body__value">2997 грн</div>
+                              </div>
+                              <div class="two-form-order__body two-form-order-body">
+                                <div class="two-form-order-body__label"><span>Загальна вартість</span></div>
+                                <div class="two-form-order-body__value"><span>5374 грн</span></div>
+                                <div class="two-form-order-body__label"><span>Спосіб доставки</span></div>
+                                <div class="two-form-order-body__value">Самовивіз</div>
+                              </div>
+                              <div class="two-form-order__body two-form-order-body">
+                                <div class="two-form-order-body__label"><span>Спосіб Оплати</span></div>
+                                <div class="two-form-order-body__value">При отриманні</div>
+                              </div>
+                            </div>
+                            <button class="two-form-order__btn btn" type="submit">Оформити замовлення</button>
+                          </div>
+                        </form> 
+                      </div>
+                    </div>
+                    <div class="basket__body basket__body_3 basket-body-thre">
+                      <div class="basket-body-thre__wrapper">
+                        <div class="basket-body-thre__item basket-body-thre-item">
+                          <div class="basket-body-thre-item__icon">
+                            <img src="./img/svg/sent.svg" alt="icon">
+                          </div>
+                          <h2 class="basket-body-thre-item__title">Ваше замовлення оформлено!</h2>
+                          <div class="basket-body-thre-item__sub-title">Незабаром менеджер зв’яжеться для уточнення деталей</div>
+                        </div>
+                        <div class="basket-body-thre__item basket-body-thre-item">
+                          <div class="basket-body-thre-item__wrapper thre-item-wrapper-details">
+                            <div class="thre-item-wrapper-details__item">
+                              <div class="thre-item-wrapper-details__label">Номер замовлення</div>
+                              <div class="thre-item-wrapper-details__value">13119</div>
+                            </div>
+                            <div class="thre-item-wrapper-details__item">
+                              <div class="thre-item-wrapper-details__label">Дата замовлення</div>
+                              <div class="thre-item-wrapper-details__value">29/05/2022</div>
+                            </div>
+                            <div class="thre-item-wrapper-details__item">
+                              <div class="thre-item-wrapper-details__label">Загальна вартість</div>
+                              <div class="thre-item-wrapper-details__value">5374 грн</div>
+                            </div>
+                            <div class="thre-item-wrapper-details__item">
+                              <div class="thre-item-wrapper-details__label">Спосіб доставки</div>
+                              <div class="thre-item-wrapper-details__value">Самовивіз</div>
+                            </div>
+                            <div class="thre-item-wrapper-details__item">
+                              <div class="thre-item-wrapper-details__label">Спосіб оплати</div>
+                              <div class="thre-item-wrapper-details__value">При отриманні</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="basket-body-thre__item basket-body-thre-item">
+                          <div class="basket-body-thre-item__wrapper thre-item-wrapper-info">
+                            <div class="thre-item-wrapper-info__name">Деталі замовлення</div>
+                            <div class="thre-item-wrapper-info__labels">
+                              <span>Товар</span>
+                              <span>Ціна</span>
+                            </div>
+                            <div class="thre-item-wrapper-info__wrapper">
+                              <div class="thre-item-wrapper-info__item">
+                                <div class="thre-item-wrapper-info__label">Ролети день-ніч Secret Cвітло-коричневий x2</div>
+                                <div class="thre-item-wrapper-info__value">1198 грн</div>
+                              </div>
+                              <div class="thre-item-wrapper-info__item">
+                                <div class="thre-item-wrapper-info__label">Ролети Elite Special Edit сірі</div>
+                                <div class="thre-item-wrapper-info__value">879 грн</div>
+                              </div>
+                              <div class="thre-item-wrapper-info__item">
+                                <div class="thre-item-wrapper-info__label">Ролети Premium сірі 2021 x3</div>
+                                <div class="thre-item-wrapper-info__value">2997 грн</div>
+                              </div>
+                            </div>
+                            <div class="thre-item-wrapper-info__wrapper">
+                              <div class="thre-item-wrapper-info__item">
+                                <div class="thre-item-wrapper-info__label"><span>Загальна вартість</span></div>
+                                <div class="thre-item-wrapper-info__value"><span>5374 грн</span></div>
+                              </div>
+                              <div class="thre-item-wrapper-info__item">
+                                <div class="thre-item-wrapper-info__label"><span>Спосіб доставки</span></div>
+                                <div class="thre-item-wrapper-info__value">Самовивіз</div>
+                              </div>
+                            </div>
+                            <div class="thre-item-wrapper-info__wrapper">
+                              <div class="thre-item-wrapper-info__item">
+                                <div class="thre-item-wrapper-info__label"><span>Спосіб Оплати</span></div>
+                                <div class="thre-item-wrapper-info__value">При отриманні</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="#" class="basket-body-thre__btn btn">повернутися на головну</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__info footer-info">
+        <div class="footer-info__container _container">
+          <div class="footer-info__dont-miss footer-dont-miss">
+            <div class="footer-dont-miss__text title">
+              НЕ ПРОПУСТІТЬ ЗМІНУ, ЩОБ ОТРИМАТИ ЗНИЖКУ 20%
+            </div>
+            <div class="footer-dont-miss__sub-text">
+              Найшвидше отримуйте найновіші продукти та новини щодня.
+            </div>
+            <form action="#" class="footer-dont-miss__form dont-miss-form">
+              <div class="dont-miss-form__item">
+                <label for="miss-form-input">E-mail</label>
+                <input
+                  type="email"
+                  class="dont-miss-form__input input"
+                  id="miss-form-input"
+                />
+              </div>
+              <button class="dont-miss-form__btn btn" type="submit">
+                Підписатися
+              </button>
+            </form>
+          </div>
+          <div class="footer-info__wrapper footer-info-wrapper">
+            <div class="footer-info-wrapper__block item-center">
+              <img
+                class="footer-info-wrapper__logo"
+                src="./img/svg/logo.svg"
+                alt="Logo"
+              />
+              <a class="footer-info-wrapper__adres" href="#"
+                >Чернівці, вул. Небесної сотні, 23</a
+              >
+              <a class="footer-info-wrapper__phone" href="tel:+380983772595"
+                >+38 (098) 37-72-595</a
+              >
+              <div class="footer-info-wrapper__applications applications">
+                <a href="#" class="applications__link"
+                  ><img
+                    src="./img/svg/telegram.svg"
+                    alt="icon Telegram"
+                  />Telegram</a
+                >
+                <a href="#" class="applications__link"
+                  ><img
+                    src="./img/svg/whatsapp.svg"
+                    alt="icon Whatsapp"
+                  />Whatsapp</a
+                >
+                <a href="#" class="applications__link"
+                  ><img src="./img/svg/viber.svg" alt="icon Viber" />Viber</a
+                >
+                <a href="#" class="applications__link"
+                  ><img
+                    src="./img/svg/instagram.svg"
+                    alt="icon Instagram"
+                  />Instagram</a
+                >
+              </div>
+            </div>
+            <div class="footer-info-wrapper__block">
+              <div class="footer-info-wrapper__name">SUNRISE</div>
+              <ul class="footer-info-wrapper__list">
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Про нас</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link"
+                    >Послуги компанії</a
+                  >
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Дилерам</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Блог</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link"
+                    >Оплата і доставка</a
+                  >
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Гарантія</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Контакти</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-info-wrapper__block">
+              <div class="footer-info-wrapper__name">Каталог</div>
+              <div class="footer-info-wrapper__inner">
+                <ul class="footer-info-wrapper__list">
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Тканинні ролети</a
+                    >
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Ролети День-Ніч</a
+                    >
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Горизонтальні жалюзі</a
+                    >
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Вертикальні жалюзі</a
+                    >
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link">Жалюзі Плісе</a>
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Римські штори</a
+                    >
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Мансардні ролети</a
+                    >
+                  </li>
+                </ul>
+                <ul class="footer-info-wrapper__list">
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link">Рефлексолі</a>
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link">Рафштори</a>
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link">Маркізи</a>
+                  </li>
+                  <li class="footer-info-wrapper__item">
+                    <a href="#" class="footer-info-wrapper__link"
+                      >Захисні ролети</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- <div class="footer-info-wrapper__block item-retreat">
+              <ul class="footer-info-wrapper__list">
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Рефлексолі</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Рафштори</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link">Маркізи</a>
+                </li>
+                <li class="footer-info-wrapper__item">
+                  <a href="#" class="footer-info-wrapper__link"
+                    >Захисні ролети</a
+                  >
+                </li>
+              </ul>
+            </div> -->
+            <div class="footer-info-wrapper__block block-mode-operation">
+              <div class="footer-info-wrapper__name">Режим роботи</div>
+              <ul class="footer-info-wrapper__list">
+                <li class="footer-info-wrapper__item">Пн-Пт: 08:00 – 20:00</li>
+                <li class="footer-info-wrapper__item">Сб: 10:00 - 18:00</li>
+                <li class="footer-info-wrapper__item">Нд: вихідний</li>
+              </ul>
+            </div>
+            <div class="footer-info-wrapper__pay-block pay-block">
+              <a href="" class="pay-block__link"
+                ><img src="./img/svg/visa.svg" alt="" class="pay-block__img"
+              /></a>
+              <a href="" class="pay-block__link"
+                ><img src="./img/svg/master.svg" alt="" class="pay-block__img"
+              /></a>
+              <a href="" class="pay-block__link"
+                ><img src="./img/svg/liqpay.svg" alt="" class="pay-block__img"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__autor footer-autor">
+        <div class="footer-autor__container _container">
+          <div class="footer-autor__year">© 2022 Sunrise</div>
+          <div class="footer-autor__kifa">Kifa.ws</div>
+        </div>
+      </div>
+      <div class="footer__btn-start"><span class="_icon-left"></span></div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
+
+</body>
+</html>

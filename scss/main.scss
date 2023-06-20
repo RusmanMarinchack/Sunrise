@@ -457,8 +457,34 @@ select {
           }
         }
         & .block-catalog__text {
+          display: flex;
+          align-items: center;
           padding: 15px;
           text-transform: uppercase;
+
+          & .btn-back {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+  
+            @media screen and (max-width: 991.98px) {
+              display: none;
+            }
+  
+            &.mob {
+              display: none;
+              color: #000;
+              pointer-events: none;
+    
+              @media screen and (max-width: 991.98px) {
+                display: block;
+              }
+            }
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
           
           & span::before {
             padding-right: 10px;
@@ -535,6 +561,7 @@ select {
           right: 10px;
           top: 0;
           transform: translate(50%, 80%);
+          pointer-events: none;
         }
         @media screen and (max-width: 992px) {
           text-transform: uppercase;
@@ -792,14 +819,29 @@ select {
         border-radius: 4px 4px 0px 0px;
         color: #fff;
 
-        & a {
+        & .btn-back {
+          display: block;
           text-decoration: none;
           color: #fff;
+
+          @media screen and (max-width: 991.98px) {
+            display: none;
+          }
+
+          &.mob {
+            display: none;
+  
+            @media screen and (max-width: 991.98px) {
+              display: block;
+            }
+          }
 
           &:hover {
             text-decoration: underline;
           }
         }
+
+
 
         & span::before {
           display: none;

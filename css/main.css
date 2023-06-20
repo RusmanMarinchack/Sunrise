@@ -1194,6 +1194,15 @@ select {
   color: #fff;
 }
 
+.header .header-content .block-catalog__text a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header .header-content .block-catalog__text a:hover {
+  text-decoration: underline;
+}
+
 .header .header-content .block-catalog__text span::before {
   display: none;
   -webkit-transform: rotate(150deg);
